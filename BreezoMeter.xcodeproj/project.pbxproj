@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9D9D2642D49100FEF688 /* AppDelegate.swift */; };
-		63BF9DA02642D49100FEF688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9D9F2642D49100FEF688 /* SceneDelegate.swift */; };
 		63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DA12642D49100FEF688 /* ViewController.swift */; };
 		63BF9DA52642D49100FEF688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DA32642D49100FEF688 /* Main.storyboard */; };
 		63BF9DA82642D49100FEF688 /* BreezoMeter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DA62642D49100FEF688 /* BreezoMeter.xcdatamodeld */; };
 		63BF9DAA2642D49300FEF688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DA92642D49300FEF688 /* Assets.xcassets */; };
 		63BF9DAD2642D49300FEF688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DAB2642D49300FEF688 /* LaunchScreen.storyboard */; };
 		63BF9DB82642D49300FEF688 /* BreezoMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DB72642D49300FEF688 /* BreezoMeterTests.swift */; };
+		63BF9DC32642D55E00FEF688 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */; };
+		63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC42644141D00FEF688 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,6 @@
 /* Begin PBXFileReference section */
 		63BF9D9A2642D49100FEF688 /* BreezoMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreezoMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BF9D9D2642D49100FEF688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63BF9D9F2642D49100FEF688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		63BF9DA12642D49100FEF688 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63BF9DA42642D49100FEF688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BF9DA72642D49100FEF688 /* BreezoMeter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreezoMeter.xcdatamodel; sourceTree = "<group>"; };
@@ -40,6 +40,10 @@
 		63BF9DB32642D49300FEF688 /* BreezoMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreezoMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BF9DB72642D49300FEF688 /* BreezoMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreezoMeterTests.swift; sourceTree = "<group>"; };
 		63BF9DB92642D49300FEF688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		63BF9DC42644141D00FEF688 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		63BF9DC6264447DA00FEF688 /* Lavra Trail.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Lavra Trail.gpx"; sourceTree = "<group>"; };
+		63BF9DC726444B0800FEF688 /* test.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		63BF9D912642D49100FEF688 = {
 			isa = PBXGroup;
 			children = (
+				63BF9DC726444B0800FEF688 /* test.gpx */,
+				63BF9DC6264447DA00FEF688 /* Lavra Trail.gpx */,
 				63BF9D9C2642D49100FEF688 /* BreezoMeter */,
 				63BF9DB62642D49300FEF688 /* BreezoMeterTests */,
 				63BF9D9B2642D49100FEF688 /* Products */,
@@ -82,13 +88,14 @@
 			isa = PBXGroup;
 			children = (
 				63BF9D9D2642D49100FEF688 /* AppDelegate.swift */,
-				63BF9D9F2642D49100FEF688 /* SceneDelegate.swift */,
 				63BF9DA12642D49100FEF688 /* ViewController.swift */,
 				63BF9DA32642D49100FEF688 /* Main.storyboard */,
 				63BF9DA92642D49300FEF688 /* Assets.xcassets */,
 				63BF9DAB2642D49300FEF688 /* LaunchScreen.storyboard */,
 				63BF9DAE2642D49300FEF688 /* Info.plist */,
 				63BF9DA62642D49100FEF688 /* BreezoMeter.xcdatamodeld */,
+				63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */,
+				63BF9DC42644141D00FEF688 /* LocationService.swift */,
 			);
 			path = BreezoMeter;
 			sourceTree = "<group>";
@@ -203,10 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF9DC32642D55E00FEF688 /* ServiceProvider.swift in Sources */,
 				63BF9DA82642D49100FEF688 /* BreezoMeter.xcdatamodeld in Sources */,
+				63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */,
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
 				63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */,
-				63BF9DA02642D49100FEF688 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +374,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BreezoMeter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,8 +384,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.BreezoMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -383,7 +394,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BreezoMeter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,8 +404,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.BreezoMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

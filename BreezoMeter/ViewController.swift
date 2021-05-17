@@ -12,8 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let service = ServiceProvider()
+        service.loadInfo{ [weak self] (result) in
+            guard let result = result, let _ = self else {
+                return
+            }
+            print(result)
+        }
     }
+    
 
 
 }
