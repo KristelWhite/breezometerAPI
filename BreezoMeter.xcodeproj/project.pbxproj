@@ -16,6 +16,14 @@
 		63BF9DB82642D49300FEF688 /* BreezoMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DB72642D49300FEF688 /* BreezoMeterTests.swift */; };
 		63BF9DC32642D55E00FEF688 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */; };
 		63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC42644141D00FEF688 /* LocationService.swift */; };
+		63BF9DD8265438BF00FEF688 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD7265438BF00FEF688 /* Model.swift */; };
+		63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD92654397500FEF688 /* TabCoordinator.swift */; };
+		63BF9DDD26546C3800FEF688 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DDB26546C3800FEF688 /* CardViewController.swift */; };
+		63BF9DDE26546C3800FEF688 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DDC26546C3800FEF688 /* CardViewController.xib */; };
+		63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DDF26546D7000FEF688 /* PollenViewController.swift */; };
+		63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DE026546D7000FEF688 /* PollenViewController.xib */; };
+		63BF9DE526546D9300FEF688 /* BrethQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */; };
+		63BF9DE626546D9300FEF688 /* BrethQualityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		63BF9DC42644141D00FEF688 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		63BF9DC6264447DA00FEF688 /* Lavra Trail.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Lavra Trail.gpx"; sourceTree = "<group>"; };
 		63BF9DC726444B0800FEF688 /* test.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
+		63BF9DD7265438BF00FEF688 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		63BF9DD92654397500FEF688 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		63BF9DDB26546C3800FEF688 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		63BF9DDC26546C3800FEF688 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		63BF9DDF26546D7000FEF688 /* PollenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenViewController.swift; sourceTree = "<group>"; };
+		63BF9DE026546D7000FEF688 /* PollenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollenViewController.xib; sourceTree = "<group>"; };
+		63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrethQualityViewController.swift; sourceTree = "<group>"; };
+		63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrethQualityViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +103,12 @@
 		63BF9D9C2642D49100FEF688 /* BreezoMeter */ = {
 			isa = PBXGroup;
 			children = (
+				63BF9DC92654351C00FEF688 /* Controllers */,
+				63BF9DD5265436CC00FEF688 /* Library */,
+				63BF9DD4265436AA00FEF688 /* ViewModels */,
+				63BF9DD32654367700FEF688 /* Coordinators */,
+				63BF9DD22654365000FEF688 /* Geolocation */,
+				63BF9DD12654362C00FEF688 /* Service */,
 				63BF9D9D2642D49100FEF688 /* AppDelegate.swift */,
 				63BF9DA12642D49100FEF688 /* ViewController.swift */,
 				63BF9DA32642D49100FEF688 /* Main.storyboard */,
@@ -94,8 +116,6 @@
 				63BF9DAB2642D49300FEF688 /* LaunchScreen.storyboard */,
 				63BF9DAE2642D49300FEF688 /* Info.plist */,
 				63BF9DA62642D49100FEF688 /* BreezoMeter.xcdatamodeld */,
-				63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */,
-				63BF9DC42644141D00FEF688 /* LocationService.swift */,
 			);
 			path = BreezoMeter;
 			sourceTree = "<group>";
@@ -107,6 +127,58 @@
 				63BF9DB92642D49300FEF688 /* Info.plist */,
 			);
 			path = BreezoMeterTests;
+			sourceTree = "<group>";
+		};
+		63BF9DC92654351C00FEF688 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DDB26546C3800FEF688 /* CardViewController.swift */,
+				63BF9DDC26546C3800FEF688 /* CardViewController.xib */,
+				63BF9DDF26546D7000FEF688 /* PollenViewController.swift */,
+				63BF9DE026546D7000FEF688 /* PollenViewController.xib */,
+				63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */,
+				63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		63BF9DD12654362C00FEF688 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DD7265438BF00FEF688 /* Model.swift */,
+				63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		63BF9DD22654365000FEF688 /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DC42644141D00FEF688 /* LocationService.swift */,
+			);
+			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		63BF9DD32654367700FEF688 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DD92654397500FEF688 /* TabCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		63BF9DD4265436AA00FEF688 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		63BF9DD5265436CC00FEF688 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,8 +262,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */,
+				63BF9DDE26546C3800FEF688 /* CardViewController.xib in Resources */,
 				63BF9DAD2642D49300FEF688 /* LaunchScreen.storyboard in Resources */,
 				63BF9DAA2642D49300FEF688 /* Assets.xcassets in Resources */,
+				63BF9DE626546D9300FEF688 /* BrethQualityViewController.xib in Resources */,
 				63BF9DA52642D49100FEF688 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,10 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF9DE526546D9300FEF688 /* BrethQualityViewController.swift in Sources */,
+				63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */,
+				63BF9DD8265438BF00FEF688 /* Model.swift in Sources */,
 				63BF9DC32642D55E00FEF688 /* ServiceProvider.swift in Sources */,
 				63BF9DA82642D49100FEF688 /* BreezoMeter.xcdatamodeld in Sources */,
 				63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */,
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
+				63BF9DDD26546C3800FEF688 /* CardViewController.swift in Sources */,
+				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
 				63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,11 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let locationService = LocationService()
-
+    var tabCoordinator: TabCoordinator!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        locationService.requestPermission()
-        locationService.start()
+        tabCoordinator = TabCoordinator()
+        self.window?.rootViewController = tabCoordinator.rootViewController
+        self.window?.makeKeyAndVisible()
+       // locationService.requestPermission()
+        //locationService.start()
 
         // Override point for customization after application launch.
         return true
