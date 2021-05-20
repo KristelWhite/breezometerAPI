@@ -10,10 +10,20 @@ import UIKit
 
 class PollenViewController: UIViewController {
 
+    @IBOutlet weak var seachBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "PollenDaysTableViewCell", bundle: nil),
+        forCellReuseIdentifier: "daysViewCell")
+                          
+        tableView.rowHeight = 250
+        
+       
     }
 
 
@@ -27,4 +37,17 @@ class PollenViewController: UIViewController {
     }
     */
 
+}
+
+extension PollenViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! PollenDaysTableViewCell
+        return cell
+    }
+    
+    
 }
