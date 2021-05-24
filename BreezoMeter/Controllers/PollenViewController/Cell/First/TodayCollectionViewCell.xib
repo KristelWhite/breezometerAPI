@@ -20,32 +20,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbs-y1-7ZP">
-                                <rect key="frame" x="54" y="10" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzW-gp-t9h">
-                                <rect key="frame" x="54" y="119" width="42" height="21"/>
+                                <rect key="frame" x="0.0" y="10" width="150" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gb-ZD-LAy">
-                                <rect key="frame" x="54" y="93" width="42" height="21"/>
+                                <rect key="frame" x="0.0" y="94.5" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzW-gp-t9h">
+                                <rect key="frame" x="0.0" y="122" width="150" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Rbs-y1-7ZP" firstAttribute="leading" secondItem="WvM-Lv-Arq" secondAttribute="leading" id="3Gz-5I-cWm"/>
                             <constraint firstItem="BzW-gp-t9h" firstAttribute="top" secondItem="3Gb-ZD-LAy" secondAttribute="bottom" constant="5" id="6Fa-Ji-BFf"/>
+                            <constraint firstAttribute="trailing" secondItem="3Gb-ZD-LAy" secondAttribute="trailing" id="EBH-Dm-5Ki"/>
                             <constraint firstItem="BzW-gp-t9h" firstAttribute="centerX" secondItem="WvM-Lv-Arq" secondAttribute="centerX" id="I7l-og-mEW"/>
                             <constraint firstItem="3Gb-ZD-LAy" firstAttribute="centerX" secondItem="WvM-Lv-Arq" secondAttribute="centerX" id="Kkn-K1-qIM"/>
+                            <constraint firstAttribute="trailing" secondItem="Rbs-y1-7ZP" secondAttribute="trailing" id="PPG-aw-LRK"/>
                             <constraint firstAttribute="bottom" secondItem="BzW-gp-t9h" secondAttribute="bottom" constant="10" id="RNa-ja-kBx"/>
                             <constraint firstItem="Rbs-y1-7ZP" firstAttribute="centerX" secondItem="WvM-Lv-Arq" secondAttribute="centerX" id="YC2-3X-1XF"/>
+                            <constraint firstItem="BzW-gp-t9h" firstAttribute="leading" secondItem="WvM-Lv-Arq" secondAttribute="leading" id="dXY-1t-xLE"/>
                             <constraint firstItem="Rbs-y1-7ZP" firstAttribute="top" secondItem="WvM-Lv-Arq" secondAttribute="top" constant="10" id="hJ6-Xm-0yH"/>
+                            <constraint firstAttribute="trailing" secondItem="BzW-gp-t9h" secondAttribute="trailing" id="mzP-Kg-WB2"/>
+                            <constraint firstItem="3Gb-ZD-LAy" firstAttribute="leading" secondItem="WvM-Lv-Arq" secondAttribute="leading" id="olC-cS-hTC"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -58,6 +64,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="153" height="152"/>
+            <connections>
+                <outlet property="numLevel" destination="BzW-gp-t9h" id="B4i-Oq-ZGh"/>
+                <outlet property="textLevel" destination="3Gb-ZD-LAy" id="CPU-ej-u1G"/>
+                <outlet property="weekday" destination="Rbs-y1-7ZP" id="dnV-lP-NgJ"/>
+            </connections>
             <point key="canvasLocation" x="174.63768115942031" y="58.928571428571423"/>
         </collectionViewCell>
     </objects>

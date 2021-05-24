@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabCoordinator: TabCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        tabCoordinator = TabCoordinator()
-        self.window?.rootViewController = tabCoordinator.rootViewController
+        let appNavigationController = UINavigationController()
+        tabCoordinator = TabCoordinator(navigationController: appNavigationController)
+        self.window?.rootViewController = tabCoordinator.navigationViewController
         self.window?.makeKeyAndVisible()
+        
        // locationService.requestPermission()
         //locationService.start()
 

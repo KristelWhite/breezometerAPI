@@ -14,22 +14,23 @@ final class TabCoordinator: NSObject, UITabBarControllerDelegate {
 var rootViewController:  UIViewController{
     return tabController
 }
+let navigationViewController : UINavigationController
 let tabController: UITabBarController
 var controllers: [UIViewController] = []
 
-override init() {
+    init(navigationController : UINavigationController) {
 
     tabController = UITabBarController()
+    navigationViewController = navigationController
     
- 
     let brethQualityViewController = BrethQualityViewController()
-    brethQualityViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear"))
+    brethQualityViewController.tabBarItem = UITabBarItem(title: "Качество воздуха", image: UIImage(imageLiteralResourceName: "weather30"), selectedImage: UIImage(imageLiteralResourceName: "weather30"))
 
     let pollenViewController = PollenViewController()
-    pollenViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear"))
+    pollenViewController.tabBarItem = UITabBarItem(title: "Пыльца", image: UIImage(imageLiteralResourceName: "pollen30"), selectedImage: UIImage(imageLiteralResourceName: "pollen30"))
 
     let cardViewController = CardViewController()
-    cardViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "gear"), selectedImage: UIImage(systemName: "gear"))
+    cardViewController.tabBarItem = UITabBarItem(title: "Карта", image: UIImage(imageLiteralResourceName: "map24") , selectedImage: UIImage(systemName: "map24"))
 
     super.init()
 
@@ -40,6 +41,7 @@ override init() {
     tabController.viewControllers = controllers
     tabController.tabBar.isTranslucent = false
     tabController.delegate = self
-
+        
+        navigationViewController.pushViewController(tabController, animated: true)
 }
 }

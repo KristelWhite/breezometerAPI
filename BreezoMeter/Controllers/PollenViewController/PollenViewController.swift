@@ -20,6 +20,8 @@ class PollenViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "PollenDaysTableViewCell", bundle: nil),
         forCellReuseIdentifier: "daysViewCell")
+        tableView.register(UINib(nibName: "ListOfPollenTypesTableViewCell", bundle: nil),
+           forCellReuseIdentifier: "typesViewCell")
                           
         tableView.rowHeight = 250
         
@@ -45,8 +47,15 @@ extension PollenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! PollenDaysTableViewCell
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! PollenDaysTableViewCell
+            return cell
+        }
+        else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "typesViewCell", for: indexPath) as!   ListOfPollenTypesTableViewCell
+            return cell
+        }
+       return UITableViewCell()
     }
     
     

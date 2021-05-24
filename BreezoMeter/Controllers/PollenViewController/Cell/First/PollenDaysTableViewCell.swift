@@ -11,7 +11,7 @@ import UIKit
 class PollenDaysTableViewCell: UITableViewCell{
 
     @IBOutlet weak var grassButton: UIButton!
-    @IBOutlet weak var pollenButton: UIButton!
+    @IBOutlet weak var weedButton: UIButton!
     @IBOutlet weak var treeButton: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,12 +21,27 @@ class PollenDaysTableViewCell: UITableViewCell{
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "TodayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "todayViewCell")
+        
+        grassButton.setTitle("Grass", for: .normal)
+        grassButton.setImage(UIImage(named: "grass24")!, for: .normal)
+        grassButton.imageView?.contentMode = .scaleAspectFit
+        grassButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        
+        weedButton.setTitle("Weed", for: .normal)
+        weedButton.setImage(UIImage(named: "leaf24")!, for: .normal)
+        weedButton.imageView?.contentMode = .scaleAspectFit
+        weedButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        
+        treeButton.setTitle("Trees", for: .normal)
+        treeButton.setImage(UIImage(named: "tree24")!, for: .normal)
+        treeButton.imageView?.contentMode = .scaleAspectFit
+        treeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
     }
         
          
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//        super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
@@ -40,6 +55,16 @@ extension PollenDaysTableViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayViewCell", for: indexPath) as! TodayCollectionViewCell
+        
+        if indexPath.row == 0 {
+            cell.weekday.text = "Today"
+        }
+        else if indexPath.row == 1 {
+            cell.weekday.text = "Tomorrow"
+        }
+        else if indexPath.row == 2 {
+            cell.weekday.text = "After tomorrow"
+        }
         return cell
     }
     
@@ -73,7 +98,7 @@ extension PollenDaysTableViewCell: UICollectionViewDelegateFlowLayout {
         return CGFloat(0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(20)
+        return CGFloat(10)
 
     }
     
@@ -86,8 +111,8 @@ extension PollenDaysTableViewCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWight = (Double(collectionView.bounds.width) - Double(2) * 20) / Double(3)
-        let cellHeight = (Double(collectionView.bounds.height) - Double(2) * 20 - 10 * 2)
+        let cellWight = (Double(collectionView.bounds.width) - Double(2) * 10) / Double(3)
+        let cellHeight = (Double(collectionView.bounds.height) - Double(2) * 10 - 10 * 2)
         return CGSize(width: cellWight, height: cellHeight)
     }
 }

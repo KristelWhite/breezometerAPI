@@ -34,7 +34,7 @@
                         </subviews>
                     </stackView>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MGK-0I-6Ls">
-                        <rect key="frame" x="30" y="70" width="240" height="110"/>
+                        <rect key="frame" x="15" y="60" width="270" height="120"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p79-LF-5Gc">
                             <size key="itemSize" width="50" height="50"/>
@@ -46,10 +46,10 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MGK-0I-6Ls" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="2TB-ne-0x5"/>
-                    <constraint firstAttribute="trailing" secondItem="MGK-0I-6Ls" secondAttribute="trailing" constant="30" id="9Zg-kB-GrM"/>
+                    <constraint firstItem="MGK-0I-6Ls" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="2TB-ne-0x5"/>
+                    <constraint firstAttribute="trailing" secondItem="MGK-0I-6Ls" secondAttribute="trailing" constant="15" id="9Zg-kB-GrM"/>
                     <constraint firstItem="Nn3-K4-sUU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ide-U2-lgZ"/>
-                    <constraint firstItem="MGK-0I-6Ls" firstAttribute="top" secondItem="Nn3-K4-sUU" secondAttribute="bottom" constant="30" id="Kxo-V3-ngk"/>
+                    <constraint firstItem="MGK-0I-6Ls" firstAttribute="top" secondItem="Nn3-K4-sUU" secondAttribute="bottom" constant="20" id="Kxo-V3-ngk"/>
                     <constraint firstAttribute="bottom" secondItem="MGK-0I-6Ls" secondAttribute="bottom" constant="20" id="bbx-EQ-kTg"/>
                     <constraint firstAttribute="trailing" secondItem="Nn3-K4-sUU" secondAttribute="trailing" constant="50" id="kgc-5g-6oj"/>
                     <constraint firstItem="Nn3-K4-sUU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="zac-Qq-wQY"/>
@@ -59,8 +59,8 @@
             <connections>
                 <outlet property="collectionView" destination="MGK-0I-6Ls" id="ySY-Mm-lLo"/>
                 <outlet property="grassButton" destination="fWt-tc-mWg" id="wMI-40-q3d"/>
-                <outlet property="pollenButton" destination="jGu-eV-j4E" id="gZc-fv-ijI"/>
                 <outlet property="treeButton" destination="3nD-v3-SzT" id="VUa-74-9ZD"/>
+                <outlet property="weedButton" destination="jGu-eV-j4E" id="gZc-fv-ijI"/>
             </connections>
             <point key="canvasLocation" x="92.753623188405811" y="79.017857142857139"/>
         </tableViewCell>

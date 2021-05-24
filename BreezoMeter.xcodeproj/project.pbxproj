@@ -29,6 +29,8 @@
 		63BF9DEE265566CF00FEF688 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */; };
 		63BF9DEF265566CF00FEF688 /* TodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */; };
 		63BF9DF12656BA1100FEF688 /* Sadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DF02656BA1100FEF688 /* Sadow.swift */; };
+		63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DF8265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift */; };
+		63BF9DFB265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DF9265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCollectionViewCell.xib; sourceTree = "<group>"; };
 		63BF9DF02656BA1100FEF688 /* Sadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sadow.swift; sourceTree = "<group>"; };
+		63BF9DF8265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPollenTypesTableViewCell.swift; sourceTree = "<group>"; };
+		63BF9DF9265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfPollenTypesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +147,9 @@
 		63BF9DC92654351C00FEF688 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9DDB26546C3800FEF688 /* CardViewController.swift */,
-				63BF9DDC26546C3800FEF688 /* CardViewController.xib */,
-				63BF9DDF26546D7000FEF688 /* PollenViewController.swift */,
-				63BF9DE026546D7000FEF688 /* PollenViewController.xib */,
-				63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */,
-				63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */,
+				63BF9DF5265C3EC300FEF688 /* CardViewController */,
+				63BF9DF4265C3E8E00FEF688 /* BrethQualityViewController */,
+				63BF9DF2265C3E2500FEF688 /* PollenViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,12 +197,65 @@
 		63BF9DE72655386900FEF688 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		63BF9DF2265C3E2500FEF688 /* PollenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DF3265C3E4E00FEF688 /* Cell */,
+				63BF9DDF26546D7000FEF688 /* PollenViewController.swift */,
+				63BF9DE026546D7000FEF688 /* PollenViewController.xib */,
+			);
+			path = PollenViewController;
+			sourceTree = "<group>";
+		};
+		63BF9DF3265C3E4E00FEF688 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DF7265C3F6200FEF688 /* Second */,
+				63BF9DF6265C3F2400FEF688 /* First */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		63BF9DF4265C3E8E00FEF688 /* BrethQualityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */,
+				63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */,
+			);
+			path = BrethQualityViewController;
+			sourceTree = "<group>";
+		};
+		63BF9DF5265C3EC300FEF688 /* CardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DDB26546C3800FEF688 /* CardViewController.swift */,
+				63BF9DDC26546C3800FEF688 /* CardViewController.xib */,
+			);
+			path = CardViewController;
+			sourceTree = "<group>";
+		};
+		63BF9DF6265C3F2400FEF688 /* First */ = {
+			isa = PBXGroup;
+			children = (
 				63BF9DE8265538D900FEF688 /* PollenDaysTableViewCell.swift */,
 				63BF9DE9265538D900FEF688 /* PollenDaysTableViewCell.xib */,
 				63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */,
 				63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */,
 			);
-			path = Cells;
+			path = First;
+			sourceTree = "<group>";
+		};
+		63BF9DF7265C3F6200FEF688 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DF8265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift */,
+				63BF9DF9265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib */,
+			);
+			path = Second;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */,
+				63BF9DFB265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib in Resources */,
 				63BF9DDE26546C3800FEF688 /* CardViewController.xib in Resources */,
 				63BF9DAD2642D49300FEF688 /* LaunchScreen.storyboard in Resources */,
 				63BF9DAA2642D49300FEF688 /* Assets.xcassets in Resources */,
@@ -322,6 +377,7 @@
 				63BF9DDD26546C3800FEF688 /* CardViewController.swift in Sources */,
 				63BF9DF12656BA1100FEF688 /* Sadow.swift in Sources */,
 				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
+				63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */,
 				63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
