@@ -10,21 +10,55 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TodayCollectionViewCell" customModule="BreezoMeter" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-            <autoresizingMask key="autoresizingMask"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WvM-Lv-Arq">
-                        <rect key="frame" x="-95" y="-39" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvM-Lv-Arq">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbs-y1-7ZP">
+                                <rect key="frame" x="54" y="10" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzW-gp-t9h">
+                                <rect key="frame" x="54" y="119" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gb-ZD-LAy">
+                                <rect key="frame" x="54" y="93" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BzW-gp-t9h" firstAttribute="top" secondItem="3Gb-ZD-LAy" secondAttribute="bottom" constant="5" id="6Fa-Ji-BFf"/>
+                            <constraint firstItem="BzW-gp-t9h" firstAttribute="centerX" secondItem="WvM-Lv-Arq" secondAttribute="centerX" id="I7l-og-mEW"/>
+                            <constraint firstItem="3Gb-ZD-LAy" firstAttribute="centerX" secondItem="WvM-Lv-Arq" secondAttribute="centerX" id="Kkn-K1-qIM"/>
+                            <constraint firstAttribute="bottom" secondItem="BzW-gp-t9h" secondAttribute="bottom" constant="10" id="RNa-ja-kBx"/>
+                            <constraint firstItem="Rbs-y1-7ZP" firstAttribute="centerX" secondItem="WvM-Lv-Arq" secondAttribute="centerX" id="YC2-3X-1XF"/>
+                            <constraint firstItem="Rbs-y1-7ZP" firstAttribute="top" secondItem="WvM-Lv-Arq" secondAttribute="top" constant="10" id="hJ6-Xm-0yH"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="WvM-Lv-Arq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NeW-Lt-AMF"/>
+                <constraint firstAttribute="trailing" secondItem="WvM-Lv-Arq" secondAttribute="trailing" id="WGC-78-nJ4"/>
+                <constraint firstAttribute="bottom" secondItem="WvM-Lv-Arq" secondAttribute="bottom" id="mZv-3I-ihq"/>
+                <constraint firstItem="WvM-Lv-Arq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="slh-MG-1EW"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="139" y="60"/>
+            <size key="customSize" width="153" height="152"/>
+            <point key="canvasLocation" x="174.63768115942031" y="58.928571428571423"/>
         </collectionViewCell>
     </objects>
 </document>

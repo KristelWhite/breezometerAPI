@@ -28,6 +28,7 @@
 		63BF9DEB265538D900FEF688 /* PollenDaysTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DE9265538D900FEF688 /* PollenDaysTableViewCell.xib */; };
 		63BF9DEE265566CF00FEF688 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */; };
 		63BF9DEF265566CF00FEF688 /* TodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */; };
+		63BF9DF12656BA1100FEF688 /* Sadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DF02656BA1100FEF688 /* Sadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		63BF9DE9265538D900FEF688 /* PollenDaysTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollenDaysTableViewCell.xib; sourceTree = "<group>"; };
 		63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCollectionViewCell.xib; sourceTree = "<group>"; };
+		63BF9DF02656BA1100FEF688 /* Sadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		63BF9DD5265436CC00FEF688 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				63BF9DF02656BA1100FEF688 /* Sadow.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */,
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
 				63BF9DDD26546C3800FEF688 /* CardViewController.swift in Sources */,
+				63BF9DF12656BA1100FEF688 /* Sadow.swift in Sources */,
 				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
 				63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */,
 			);
