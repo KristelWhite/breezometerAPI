@@ -20,7 +20,7 @@ class TodayCollectionViewCell: UICollectionViewCell {
         weekday.lineBreakMode = .byWordWrapping
         weekday.numberOfLines = 0
         weekday.textAlignment = .center
-        weekday.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        weekday.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         
         textLevel.textAlignment = .center
         textLevel.font = UIFont.systemFont(ofSize: 16, weight: .regular)

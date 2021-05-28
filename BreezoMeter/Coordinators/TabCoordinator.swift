@@ -29,14 +29,14 @@ var controllers: [UIViewController] = []
     let pollenViewController = PollenViewController()
     pollenViewController.tabBarItem = UITabBarItem(title: "Пыльца", image: UIImage(imageLiteralResourceName: "pollen30"), selectedImage: UIImage(imageLiteralResourceName: "pollen30"))
 
-    let cardViewController = CardViewController()
-    cardViewController.tabBarItem = UITabBarItem(title: "Карта", image: UIImage(imageLiteralResourceName: "map24") , selectedImage: UIImage(systemName: "map24"))
+    let mapViewController = MapViewController() 
+    mapViewController.tabBarItem = UITabBarItem(title: "Карта", image: UIImage(imageLiteralResourceName: "map24") , selectedImage: UIImage(systemName: "map24"))
 
     super.init()
 
     controllers.append(brethQualityViewController)
     controllers.append(pollenViewController)
-    controllers.append(cardViewController)
+    controllers.append(mapViewController)
 
     tabController.viewControllers = controllers
     tabController.tabBar.isTranslucent = false

@@ -1,31 +1,25 @@
 //
-//  PollenViewController.swift
+//  AnalizeOfTypeViewController.swift
 //  BreezoMeter
 //
-//  Created by Кристина Пастухова on 19.05.2021.
+//  Created by Кристина Пастухова on 25.05.2021.
 //  Copyright © 2021 Кристина Пастухова. All rights reserved.
 //
 
 import UIKit
 
-class PollenViewController: UIViewController {
+class AnalizeOfTypeViewController: UIViewController {
 
-    @IBOutlet weak var seachBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "PollenDaysTableViewCell", bundle: nil),
-        forCellReuseIdentifier: "daysViewCell")
-        tableView.register(UINib(nibName: "ListOfPollenTypesTableViewCell", bundle: nil),
-           forCellReuseIdentifier: "typesViewCell")
-                          
-        
-        
-       
+        tableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil),
+        forCellReuseIdentifier: "forecastCell")
+        tableView.rowHeight = 200
     }
 
 
@@ -40,23 +34,24 @@ class PollenViewController: UIViewController {
     */
 
 }
-
-extension PollenViewController: UITableViewDataSource, UITableViewDelegate {
+extension AnalizeOfTypeViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            tableView.rowHeight = 200
-            let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! PollenDaysTableViewCell
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Forecast"
+            cell.textLabel?.textColor = .green
             return cell
         }
         else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "typesViewCell", for: indexPath) as!   ListOfPollenTypesTableViewCell
-            return cell
+            return UITableViewCell()
         }
-       return UITableViewCell()
+        return UITableViewCell()
+        
     }
     
     

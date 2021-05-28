@@ -18,8 +18,6 @@
 		63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC42644141D00FEF688 /* LocationService.swift */; };
 		63BF9DD8265438BF00FEF688 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD7265438BF00FEF688 /* Model.swift */; };
 		63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD92654397500FEF688 /* TabCoordinator.swift */; };
-		63BF9DDD26546C3800FEF688 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DDB26546C3800FEF688 /* CardViewController.swift */; };
-		63BF9DDE26546C3800FEF688 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DDC26546C3800FEF688 /* CardViewController.xib */; };
 		63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DDF26546D7000FEF688 /* PollenViewController.swift */; };
 		63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DE026546D7000FEF688 /* PollenViewController.xib */; };
 		63BF9DE526546D9300FEF688 /* BrethQualityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */; };
@@ -28,9 +26,14 @@
 		63BF9DEB265538D900FEF688 /* PollenDaysTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DE9265538D900FEF688 /* PollenDaysTableViewCell.xib */; };
 		63BF9DEE265566CF00FEF688 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */; };
 		63BF9DEF265566CF00FEF688 /* TodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */; };
-		63BF9DF12656BA1100FEF688 /* Sadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DF02656BA1100FEF688 /* Sadow.swift */; };
 		63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DF8265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift */; };
 		63BF9DFB265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DF9265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib */; };
+		63BF9DFE265D0FD000FEF688 /* AnalizeOfTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DFC265D0FCF00FEF688 /* AnalizeOfTypeViewController.swift */; };
+		63BF9DFF265D0FD000FEF688 /* AnalizeOfTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DFD265D0FCF00FEF688 /* AnalizeOfTypeViewController.xib */; };
+		63BF9E082661873300FEF688 /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E062661873300FEF688 /* ForecastTableViewCell.swift */; };
+		63BF9E092661873300FEF688 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E072661873300FEF688 /* ForecastTableViewCell.xib */; };
+		63BF9E0C26618F5500FEF688 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E0A26618F5500FEF688 /* MapViewController.swift */; };
+		63BF9E0D26618F5500FEF688 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E0B26618F5500FEF688 /* MapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +64,6 @@
 		63BF9DC726444B0800FEF688 /* test.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
 		63BF9DD7265438BF00FEF688 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		63BF9DD92654397500FEF688 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
-		63BF9DDB26546C3800FEF688 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		63BF9DDC26546C3800FEF688 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		63BF9DDF26546D7000FEF688 /* PollenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenViewController.swift; sourceTree = "<group>"; };
 		63BF9DE026546D7000FEF688 /* PollenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollenViewController.xib; sourceTree = "<group>"; };
 		63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrethQualityViewController.swift; sourceTree = "<group>"; };
@@ -71,9 +72,14 @@
 		63BF9DE9265538D900FEF688 /* PollenDaysTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollenDaysTableViewCell.xib; sourceTree = "<group>"; };
 		63BF9DEC265566CF00FEF688 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		63BF9DED265566CF00FEF688 /* TodayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCollectionViewCell.xib; sourceTree = "<group>"; };
-		63BF9DF02656BA1100FEF688 /* Sadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sadow.swift; sourceTree = "<group>"; };
 		63BF9DF8265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPollenTypesTableViewCell.swift; sourceTree = "<group>"; };
 		63BF9DF9265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListOfPollenTypesTableViewCell.xib; sourceTree = "<group>"; };
+		63BF9DFC265D0FCF00FEF688 /* AnalizeOfTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalizeOfTypeViewController.swift; sourceTree = "<group>"; };
+		63BF9DFD265D0FCF00FEF688 /* AnalizeOfTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalizeOfTypeViewController.xib; sourceTree = "<group>"; };
+		63BF9E062661873300FEF688 /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		63BF9E072661873300FEF688 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
+		63BF9E0A26618F5500FEF688 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		63BF9E0B26618F5500FEF688 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +123,6 @@
 		63BF9D9C2642D49100FEF688 /* BreezoMeter */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9DE72655386900FEF688 /* Cells */,
 				63BF9DC92654351C00FEF688 /* Controllers */,
 				63BF9DD5265436CC00FEF688 /* Library */,
 				63BF9DD4265436AA00FEF688 /* ViewModels */,
@@ -147,7 +152,8 @@
 		63BF9DC92654351C00FEF688 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9DF5265C3EC300FEF688 /* CardViewController */,
+				63BF9E00266183FF00FEF688 /* AnalizeOfTypeViewController */,
+				63BF9DF5265C3EC300FEF688 /* MapViewController */,
 				63BF9DF4265C3E8E00FEF688 /* BrethQualityViewController */,
 				63BF9DF2265C3E2500FEF688 /* PollenViewController */,
 			);
@@ -189,16 +195,8 @@
 		63BF9DD5265436CC00FEF688 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9DF02656BA1100FEF688 /* Sadow.swift */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		63BF9DE72655386900FEF688 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		63BF9DF2265C3E2500FEF688 /* PollenViewController */ = {
@@ -229,13 +227,13 @@
 			path = BrethQualityViewController;
 			sourceTree = "<group>";
 		};
-		63BF9DF5265C3EC300FEF688 /* CardViewController */ = {
+		63BF9DF5265C3EC300FEF688 /* MapViewController */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9DDB26546C3800FEF688 /* CardViewController.swift */,
-				63BF9DDC26546C3800FEF688 /* CardViewController.xib */,
+				63BF9E0A26618F5500FEF688 /* MapViewController.swift */,
+				63BF9E0B26618F5500FEF688 /* MapViewController.xib */,
 			);
-			path = CardViewController;
+			path = MapViewController;
 			sourceTree = "<group>";
 		};
 		63BF9DF6265C3F2400FEF688 /* First */ = {
@@ -256,6 +254,25 @@
 				63BF9DF9265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib */,
 			);
 			path = Second;
+			sourceTree = "<group>";
+		};
+		63BF9E00266183FF00FEF688 /* AnalizeOfTypeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9E012661841000FEF688 /* Cell */,
+				63BF9DFC265D0FCF00FEF688 /* AnalizeOfTypeViewController.swift */,
+				63BF9DFD265D0FCF00FEF688 /* AnalizeOfTypeViewController.xib */,
+			);
+			path = AnalizeOfTypeViewController;
+			sourceTree = "<group>";
+		};
+		63BF9E012661841000FEF688 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9E062661873300FEF688 /* ForecastTableViewCell.swift */,
+				63BF9E072661873300FEF688 /* ForecastTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,14 +356,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF9E092661873300FEF688 /* ForecastTableViewCell.xib in Resources */,
+				63BF9DFF265D0FD000FEF688 /* AnalizeOfTypeViewController.xib in Resources */,
 				63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */,
 				63BF9DFB265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib in Resources */,
-				63BF9DDE26546C3800FEF688 /* CardViewController.xib in Resources */,
 				63BF9DAD2642D49300FEF688 /* LaunchScreen.storyboard in Resources */,
 				63BF9DAA2642D49300FEF688 /* Assets.xcassets in Resources */,
 				63BF9DEF265566CF00FEF688 /* TodayCollectionViewCell.xib in Resources */,
 				63BF9DE626546D9300FEF688 /* BrethQualityViewController.xib in Resources */,
 				63BF9DEB265538D900FEF688 /* PollenDaysTableViewCell.xib in Resources */,
+				63BF9E0D26618F5500FEF688 /* MapViewController.xib in Resources */,
 				63BF9DA52642D49100FEF688 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF9E082661873300FEF688 /* ForecastTableViewCell.swift in Sources */,
 				63BF9DEE265566CF00FEF688 /* TodayCollectionViewCell.swift in Sources */,
 				63BF9DE526546D9300FEF688 /* BrethQualityViewController.swift in Sources */,
 				63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */,
@@ -374,10 +394,10 @@
 				63BF9DA82642D49100FEF688 /* BreezoMeter.xcdatamodeld in Sources */,
 				63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */,
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
-				63BF9DDD26546C3800FEF688 /* CardViewController.swift in Sources */,
-				63BF9DF12656BA1100FEF688 /* Sadow.swift in Sources */,
 				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
 				63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */,
+				63BF9DFE265D0FD000FEF688 /* AnalizeOfTypeViewController.swift in Sources */,
+				63BF9E0C26618F5500FEF688 /* MapViewController.swift in Sources */,
 				63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

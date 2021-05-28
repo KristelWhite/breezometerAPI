@@ -40,8 +40,12 @@ extension ListOfPollenTypesTableViewCell: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! ListOfPollenTypesTableViewCell
-//        return cell
-        return UITableViewCell()
+
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "текст"
+        cell.detailTextLabel?.text = "детали"
+        cell.accessoryType = .disclosureIndicator
+        return cell
     }
     
     
