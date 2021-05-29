@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BrethQualityViewController" customModule="BreezoMeter" customModuleProvider="target">
             <connections>
+                <outlet property="seachBar" destination="Unz-fT-7qb" id="T05-yc-4Gb"/>
+                <outlet property="tableView" destination="dfF-k7-O63" id="Ra8-ih-kKP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

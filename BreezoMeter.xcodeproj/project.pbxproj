@@ -34,6 +34,10 @@
 		63BF9E092661873300FEF688 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E072661873300FEF688 /* ForecastTableViewCell.xib */; };
 		63BF9E0C26618F5500FEF688 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E0A26618F5500FEF688 /* MapViewController.swift */; };
 		63BF9E0D26618F5500FEF688 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E0B26618F5500FEF688 /* MapViewController.xib */; };
+		63BF9E112662A36F00FEF688 /* BrethQualityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E0F2662A36F00FEF688 /* BrethQualityTableViewCell.swift */; };
+		63BF9E122662A36F00FEF688 /* BrethQualityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E102662A36F00FEF688 /* BrethQualityTableViewCell.xib */; };
+		63BF9E152662B44800FEF688 /* ImpuritiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E132662B44800FEF688 /* ImpuritiesTableViewCell.swift */; };
+		63BF9E162662B44800FEF688 /* ImpuritiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E142662B44800FEF688 /* ImpuritiesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		63BF9E072661873300FEF688 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 		63BF9E0A26618F5500FEF688 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		63BF9E0B26618F5500FEF688 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		63BF9E0F2662A36F00FEF688 /* BrethQualityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrethQualityTableViewCell.swift; sourceTree = "<group>"; };
+		63BF9E102662A36F00FEF688 /* BrethQualityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrethQualityTableViewCell.xib; sourceTree = "<group>"; };
+		63BF9E132662B44800FEF688 /* ImpuritiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpuritiesTableViewCell.swift; sourceTree = "<group>"; };
+		63BF9E142662B44800FEF688 /* ImpuritiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImpuritiesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +229,7 @@
 		63BF9DF4265C3E8E00FEF688 /* BrethQualityViewController */ = {
 			isa = PBXGroup;
 			children = (
+				63BF9E0E2662A32800FEF688 /* Cells */,
 				63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */,
 				63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */,
 			);
@@ -273,6 +282,17 @@
 				63BF9E072661873300FEF688 /* ForecastTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		63BF9E0E2662A32800FEF688 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9E0F2662A36F00FEF688 /* BrethQualityTableViewCell.swift */,
+				63BF9E102662A36F00FEF688 /* BrethQualityTableViewCell.xib */,
+				63BF9E132662B44800FEF688 /* ImpuritiesTableViewCell.swift */,
+				63BF9E142662B44800FEF688 /* ImpuritiesTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,9 +376,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BF9E162662B44800FEF688 /* ImpuritiesTableViewCell.xib in Resources */,
 				63BF9E092661873300FEF688 /* ForecastTableViewCell.xib in Resources */,
 				63BF9DFF265D0FD000FEF688 /* AnalizeOfTypeViewController.xib in Resources */,
 				63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */,
+				63BF9E122662A36F00FEF688 /* BrethQualityTableViewCell.xib in Resources */,
 				63BF9DFB265C405400FEF688 /* ListOfPollenTypesTableViewCell.xib in Resources */,
 				63BF9DAD2642D49300FEF688 /* LaunchScreen.storyboard in Resources */,
 				63BF9DAA2642D49300FEF688 /* Assets.xcassets in Resources */,
@@ -386,6 +408,7 @@
 			files = (
 				63BF9E082661873300FEF688 /* ForecastTableViewCell.swift in Sources */,
 				63BF9DEE265566CF00FEF688 /* TodayCollectionViewCell.swift in Sources */,
+				63BF9E152662B44800FEF688 /* ImpuritiesTableViewCell.swift in Sources */,
 				63BF9DE526546D9300FEF688 /* BrethQualityViewController.swift in Sources */,
 				63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */,
 				63BF9DD8265438BF00FEF688 /* Model.swift in Sources */,
@@ -395,6 +418,7 @@
 				63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */,
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
 				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
+				63BF9E112662A36F00FEF688 /* BrethQualityTableViewCell.swift in Sources */,
 				63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */,
 				63BF9DFE265D0FD000FEF688 /* AnalizeOfTypeViewController.swift in Sources */,
 				63BF9E0C26618F5500FEF688 /* MapViewController.swift in Sources */,
