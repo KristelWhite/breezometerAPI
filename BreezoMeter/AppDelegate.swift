@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabCoordinator.navigationViewController
         self.window?.makeKeyAndVisible()
         
-        locationService.requestPermission()
-        locationService.start()
+//        locationService.requestPermission()
+//        locationService.start()
 
         // Override point for customization after application launch.
         return true

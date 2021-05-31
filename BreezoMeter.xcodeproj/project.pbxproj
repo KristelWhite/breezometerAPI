@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122ED5FE2B541E91F6D2B0C6 /* Pods_BreezoMeter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9090285B4704358C14253B08 /* Pods_BreezoMeter.framework */; };
 		63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9D9D2642D49100FEF688 /* AppDelegate.swift */; };
 		63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DA12642D49100FEF688 /* ViewController.swift */; };
 		63BF9DA52642D49100FEF688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DA32642D49100FEF688 /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401FC62DC76EF4A200786DC8 /* Pods-BreezoMeter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezoMeter.debug.xcconfig"; path = "Target Support Files/Pods-BreezoMeter/Pods-BreezoMeter.debug.xcconfig"; sourceTree = "<group>"; };
+		574F439CE2706A0F840026A2 /* Pods-BreezoMeter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreezoMeter.release.xcconfig"; path = "Target Support Files/Pods-BreezoMeter/Pods-BreezoMeter.release.xcconfig"; sourceTree = "<group>"; };
 		63BF9D9A2642D49100FEF688 /* BreezoMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreezoMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BF9D9D2642D49100FEF688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BF9DA12642D49100FEF688 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		63BF9E1A2663933A00FEF688 /* UrlParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParts.swift; sourceTree = "<group>"; };
 		63BF9E1C2663FB2400FEF688 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		63BF9E1F2664C01E00FEF688 /* AirQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
+		9090285B4704358C14253B08 /* Pods_BreezoMeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreezoMeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				122ED5FE2B541E91F6D2B0C6 /* Pods_BreezoMeter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +129,8 @@
 				63BF9D9C2642D49100FEF688 /* BreezoMeter */,
 				63BF9DB62642D49300FEF688 /* BreezoMeterTests */,
 				63BF9D9B2642D49100FEF688 /* Products */,
+				AFE608E684DDE03250CE7BB2 /* Pods */,
+				E0D2F075804C117C26C43C4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -323,6 +330,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AFE608E684DDE03250CE7BB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				401FC62DC76EF4A200786DC8 /* Pods-BreezoMeter.debug.xcconfig */,
+				574F439CE2706A0F840026A2 /* Pods-BreezoMeter.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E0D2F075804C117C26C43C4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9090285B4704358C14253B08 /* Pods_BreezoMeter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,9 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BF9DBC2642D49300FEF688 /* Build configuration list for PBXNativeTarget "BreezoMeter" */;
 			buildPhases = (
+				47FF5844045A865E881BDEC5 /* [CP] Check Pods Manifest.lock */,
 				63BF9D962642D49100FEF688 /* Sources */,
 				63BF9D972642D49100FEF688 /* Frameworks */,
 				63BF9D982642D49100FEF688 /* Resources */,
+				5CAC0DF3DB2B6E862EC93085 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,6 +455,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47FF5844045A865E881BDEC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BreezoMeter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CAC0DF3DB2B6E862EC93085 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreezoMeter/Pods-BreezoMeter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BreezoMeter/Pods-BreezoMeter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreezoMeter/Pods-BreezoMeter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63BF9D962642D49100FEF688 /* Sources */ = {
@@ -612,6 +681,7 @@
 		};
 		63BF9DBD2642D49300FEF688 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 401FC62DC76EF4A200786DC8 /* Pods-BreezoMeter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -632,6 +702,7 @@
 		};
 		63BF9DBE2642D49300FEF688 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 574F439CE2706A0F840026A2 /* Pods-BreezoMeter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";

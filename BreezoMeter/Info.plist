@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1Ijoia3Jpc3RpbmFwYXN0dWtob3ZhIiwiYSI6ImNrcGNjNW5xbzFjZTIydW54bmVqd3Q1NmEifQ.1NUlSr0PWWqUBIi6I_kC_A</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>usage always location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>usage location for app</string>
+	<string>Your precise location is used to calculate turn-by-turn directions, show your location on the map, and help improve the map.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -53,5 +55,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>MGLAccuracyAuthorizationDescription</key>
+		<string>Please enable precise location. Turn-by-turn directions only work when precise location data is available.</string>
+	</dict>
 </dict>
 </plist>
