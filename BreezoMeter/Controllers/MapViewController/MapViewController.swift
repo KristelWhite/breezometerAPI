@@ -13,7 +13,11 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
     var mapView: MGLMapView!
     var rasterLayer: MGLRasterStyleLayer?
 
-   
+    @IBOutlet weak var numAQILabel: UILabel!
+    
+    @IBOutlet weak var updateMapButton: UIButton!
+    @IBOutlet weak var aqiView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let service = ServiceProvider()
@@ -26,7 +30,6 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
 //        }
         
         
-        let url = URL(string: "mapbox://styles/mapbox/streets-v11")
         mapView = MGLMapView(frame: view.bounds, styleURL: MGLStyle.darkStyleURL)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          
@@ -37,8 +40,15 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
         mapView.backgroundColor = .black
         
         view.addSubview(mapView)
-        addAnnotation()
-     
+        
+        //add MarkerView
+        let markerImageView = UIImageView(image: UIImage(named: "marker100"))
+        markerImageView.center = view.center
+        view.addSubview(markerImageView)
+        
+        view.addSubview(aqiView)
+        
+        
     }
      
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
@@ -56,57 +66,33 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
             }
         }
         
-         
         self.rasterLayer = rasterLayer
+        
     }
+    
+    
+    @IBAction func TouchUpInsideUpdateMap(_ sender: Any) {
+        print("touch updateMap")
+        numAQILabel.text = "50/100"
+    }
+    
 
-
-   func addAnnotation() {
-   let annotation = MGLPointAnnotation()
-   annotation.coordinate = CLLocationCoordinate2D(latitude: 35.03946, longitude: 135.72956)
-   annotation.title = "Kinkaku-ji"
-   annotation.subtitle = "\(annotation.coordinate.latitude), \(annotation.coordinate.longitude)"
-    
-   mapView.addAnnotation(annotation)
-    
-   // Center the map on the annotation.
-   mapView.setCenter(annotation.coordinate, zoomLevel: 17, animated: false)
-    
-   // Pop-up the callout view.
-   mapView.selectAnnotation(annotation, animated: true, completionHandler: nil)
-   }
-    
-   func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-   return true
-   }
-    
-   func mapView(_ mapView: MGLMapView, leftCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
-   if (annotation.title! == "Kinkaku-ji") {
-   // Callout height is fixed; width expands to fit its content.
-   let label = UILabel(frame: CGRect(x: 0, y: 0, width: 60, height: 50))
-   label.textAlignment = .right
-   label.textColor = UIColor(red: 0.81, green: 0.71, blue: 0.23, alpha: 1)
-   label.text = "金閣寺"
-    
-   return label
-   }
-    
-   return nil
-   }
-    
-   func mapView(_ mapView: MGLMapView, rightCalloutAccessoryViewFor annotation: MGLAnnotation) -> UIView? {
-   return UIButton(type: .detailDisclosure)
-   }
-    
-   func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
-   // Hide the callout view.
-   mapView.deselectAnnotation(annotation, animated: false)
-    
-   // Show an alert containing the annotation's details
-   let alert = UIAlertController(title: annotation.title!!, message: "A lovely (if touristy) place.", preferredStyle: .alert)
-   alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-   self.present(alert, animated: true, completion: nil)
-    
-   }
-
+//    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+//    // Only show callouts for `Hello world!` annotation.
+//    return annotation.responds(to: #selector(getter: MGLAnnotation.title)) && annotation.title! == "Hello world!"
+//    }
+//
+//    func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
+//    // Instantiate and return our custom callout view.
+//    return CustomCalloutView(representedObject: annotation)
+//    }
+//
+//    func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
+//    // Optionally handle taps on the callout.
+//    print("Tapped the callout for: \(annotation)")
+//
+//    // Hide the callout.
+//    mapView.deselectAnnotation(annotation, animated: true)
+//    }
+   
 }
