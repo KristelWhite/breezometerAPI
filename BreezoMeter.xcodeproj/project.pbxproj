@@ -16,7 +16,7 @@
 		63BF9DB82642D49300FEF688 /* BreezoMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DB72642D49300FEF688 /* BreezoMeterTests.swift */; };
 		63BF9DC32642D55E00FEF688 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */; };
 		63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DC42644141D00FEF688 /* LocationService.swift */; };
-		63BF9DD8265438BF00FEF688 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD7265438BF00FEF688 /* Model.swift */; };
+		63BF9DD8265438BF00FEF688 /* PollenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD7265438BF00FEF688 /* PollenModel.swift */; };
 		63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DD92654397500FEF688 /* TabCoordinator.swift */; };
 		63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9DDF26546D7000FEF688 /* PollenViewController.swift */; };
 		63BF9DE226546D7000FEF688 /* PollenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9DE026546D7000FEF688 /* PollenViewController.xib */; };
@@ -38,6 +38,10 @@
 		63BF9E122662A36F00FEF688 /* BrethQualityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E102662A36F00FEF688 /* BrethQualityTableViewCell.xib */; };
 		63BF9E152662B44800FEF688 /* ImpuritiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E132662B44800FEF688 /* ImpuritiesTableViewCell.swift */; };
 		63BF9E162662B44800FEF688 /* ImpuritiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BF9E142662B44800FEF688 /* ImpuritiesTableViewCell.xib */; };
+		63BF9E192663927C00FEF688 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E182663927C00FEF688 /* NetworkError.swift */; };
+		63BF9E1B2663933A00FEF688 /* UrlParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E1A2663933A00FEF688 /* UrlParts.swift */; };
+		63BF9E1D2663FB2500FEF688 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E1C2663FB2400FEF688 /* UIImageView.swift */; };
+		63BF9E202664C01E00FEF688 /* AirQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E1F2664C01E00FEF688 /* AirQualityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +70,7 @@
 		63BF9DC42644141D00FEF688 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		63BF9DC6264447DA00FEF688 /* Lavra Trail.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Lavra Trail.gpx"; sourceTree = "<group>"; };
 		63BF9DC726444B0800FEF688 /* test.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
-		63BF9DD7265438BF00FEF688 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		63BF9DD7265438BF00FEF688 /* PollenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenModel.swift; sourceTree = "<group>"; };
 		63BF9DD92654397500FEF688 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		63BF9DDF26546D7000FEF688 /* PollenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenViewController.swift; sourceTree = "<group>"; };
 		63BF9DE026546D7000FEF688 /* PollenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PollenViewController.xib; sourceTree = "<group>"; };
@@ -88,6 +92,10 @@
 		63BF9E102662A36F00FEF688 /* BrethQualityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrethQualityTableViewCell.xib; sourceTree = "<group>"; };
 		63BF9E132662B44800FEF688 /* ImpuritiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpuritiesTableViewCell.swift; sourceTree = "<group>"; };
 		63BF9E142662B44800FEF688 /* ImpuritiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImpuritiesTableViewCell.xib; sourceTree = "<group>"; };
+		63BF9E182663927C00FEF688 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		63BF9E1A2663933A00FEF688 /* UrlParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParts.swift; sourceTree = "<group>"; };
+		63BF9E1C2663FB2400FEF688 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		63BF9E1F2664C01E00FEF688 /* AirQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +139,13 @@
 		63BF9D9C2642D49100FEF688 /* BreezoMeter */ = {
 			isa = PBXGroup;
 			children = (
+				63BF9E172663924C00FEF688 /* Network */,
 				63BF9DC92654351C00FEF688 /* Controllers */,
 				63BF9DD5265436CC00FEF688 /* Library */,
 				63BF9DD4265436AA00FEF688 /* ViewModels */,
 				63BF9DD32654367700FEF688 /* Coordinators */,
 				63BF9DD22654365000FEF688 /* Geolocation */,
+				63BF9E1E2664BFBF00FEF688 /* Models */,
 				63BF9DD12654362C00FEF688 /* Service */,
 				63BF9D9D2642D49100FEF688 /* AppDelegate.swift */,
 				63BF9DA12642D49100FEF688 /* ViewController.swift */,
@@ -171,7 +181,6 @@
 		63BF9DD12654362C00FEF688 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9DD7265438BF00FEF688 /* Model.swift */,
 				63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */,
 			);
 			path = Service;
@@ -203,6 +212,7 @@
 		63BF9DD5265436CC00FEF688 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				63BF9E1C2663FB2400FEF688 /* UIImageView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -293,6 +303,24 @@
 				63BF9E142662B44800FEF688 /* ImpuritiesTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		63BF9E172663924C00FEF688 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9E182663927C00FEF688 /* NetworkError.swift */,
+				63BF9E1A2663933A00FEF688 /* UrlParts.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		63BF9E1E2664BFBF00FEF688 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63BF9DD7265438BF00FEF688 /* PollenModel.swift */,
+				63BF9E1F2664C01E00FEF688 /* AirQualityModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,16 +439,20 @@
 				63BF9E152662B44800FEF688 /* ImpuritiesTableViewCell.swift in Sources */,
 				63BF9DE526546D9300FEF688 /* BrethQualityViewController.swift in Sources */,
 				63BF9DDA2654397500FEF688 /* TabCoordinator.swift in Sources */,
-				63BF9DD8265438BF00FEF688 /* Model.swift in Sources */,
+				63BF9DD8265438BF00FEF688 /* PollenModel.swift in Sources */,
 				63BF9DC32642D55E00FEF688 /* ServiceProvider.swift in Sources */,
 				63BF9DEA265538D900FEF688 /* PollenDaysTableViewCell.swift in Sources */,
 				63BF9DA82642D49100FEF688 /* BreezoMeter.xcdatamodeld in Sources */,
 				63BF9DC52644141D00FEF688 /* LocationService.swift in Sources */,
+				63BF9E1B2663933A00FEF688 /* UrlParts.swift in Sources */,
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
 				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
 				63BF9E112662A36F00FEF688 /* BrethQualityTableViewCell.swift in Sources */,
 				63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */,
+				63BF9E202664C01E00FEF688 /* AirQualityModel.swift in Sources */,
 				63BF9DFE265D0FD000FEF688 /* AnalizeOfTypeViewController.swift in Sources */,
+				63BF9E1D2663FB2500FEF688 /* UIImageView.swift in Sources */,
+				63BF9E192663927C00FEF688 /* NetworkError.swift in Sources */,
 				63BF9E0C26618F5500FEF688 /* MapViewController.swift in Sources */,
 				63BF9D9E2642D49100FEF688 /* AppDelegate.swift in Sources */,
 			);

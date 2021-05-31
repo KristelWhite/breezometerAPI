@@ -9,10 +9,10 @@
 import Foundation
 
 
-struct ListResponse: Codable {
-    let metadata: String?
+struct PollenResponse: Codable {
+    let metadata: Bool?
     let data: [DayModel]?
-    let error: String?
+    let error: Bool?
 }
 struct DayModel : Codable {
     let date: String?

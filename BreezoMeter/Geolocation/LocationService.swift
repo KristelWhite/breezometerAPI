@@ -39,7 +39,8 @@ final class LocationService: NSObject, CLLocationManagerDelegate  {
         locationManager.distanceFilter = 100
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
-        print(locationManager.location?.coordinate ?? "нет")
+//        print(locationManager.location?.coordinate ?? "нет")
+        
 //        motionManager.startActivityUpdates(to: .main, withHandler: { [weak self] activity in
 //            self?.setActiveMode(activity?.cycling ?? false)
 //        })
@@ -58,17 +59,17 @@ final class LocationService: NSObject, CLLocationManagerDelegate  {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         
-        print(locationManager.location?.coordinate ?? "нет")
+//        print(locationManager.location?.coordinate ?? "нет")
         
         if let coordinates = locationManager.location?.coordinate {
             service.setLocation(lat: coordinates.latitude, lon: coordinates.longitude)
             }
-        print(service.latLocation, service.lonLocation)
-        service.loadInfo{ [weak self] (result) in
+//        print(service.latLocation, service.lonLocation)
+        service.loadPollen{ [weak self] (result) in
             guard let result = result, let _ = self else {
                 return
             }
-            print(result)
+//            print(result)
         }
         
 //        let userDefaults = UserDefaults.standard

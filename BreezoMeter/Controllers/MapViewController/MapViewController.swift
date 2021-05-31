@@ -10,10 +10,19 @@ import UIKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mapView.loadImage()
+        let service = ServiceProvider()
+        
+        service.loadAirQuality{ [weak self] (result) in
+            guard let result = result, let _ = self else {
+                return
+            }
+            print(result)
+        }
     }
 
 

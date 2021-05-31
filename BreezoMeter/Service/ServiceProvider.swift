@@ -6,7 +6,7 @@
 //  Copyright © 2021 Кристина Пастухова. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 
 enum ServerError: Error {
@@ -15,7 +15,7 @@ enum ServerError: Error {
 }
 struct AutorizationData {
     let baseUrl = "https://api.breezometer.com/pollen/v2/forecast/"
-    let autoKey = "f43c1b49adba4760a68f4e9fb46fa94e"
+    let autoKey = "ca0fc635ea2d476b97d14bcfc606f634"
 }
 class ServiceProvider {
 
@@ -27,14 +27,11 @@ class ServiceProvider {
     
     // MARK: - Methods
     
-    func loadInfo(completion: @escaping (ListResponse?) -> Void) {
-//        guard let url = URL(string:  "\(autoData.baseUrl)daily?lat=\(Double(latLocation))&lon=\(Double(latLocation))&days=\(dayNumber)&key=\(autoData.autoKey)") else {
-//            return
-//        }
+    func loadPollen(completion: @escaping (PollenResponse?) -> Void) {
         guard let url = URL(string:  "https://api.breezometer.com/pollen/v2/forecast/daily?lat=\(self.latLocation)&lon=\(self.lonLocation)&days=3&key=\(autoData.autoKey)") else {
             return
         }
-        print(url.absoluteString)
+//        print(url.absoluteString)
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -45,7 +42,7 @@ class ServiceProvider {
             do {
 //                let json = String(data: data, encoding: String.Encoding.utf8)
 //                print(json)
-                let result = try decoder.decode(ListResponse.self, from: data)
+                let result = try decoder.decode(PollenResponse.self, from: data)
                 DispatchQueue.main.async {
 //                    print(result)
                     completion(result)
@@ -59,5 +56,64 @@ class ServiceProvider {
         self.latLocation = lat
         self.lonLocation = lon
     }
+    
+    func loadMap(completion: @escaping (UIImageView) -> Void) {
+        
+    }
+    
+     func loadAirQuality(completion: @escaping (AirQualityResponse?) -> Void) {
+            guard let url = URL(string:  "https://api.breezometer.com/air-quality/v2/current-conditions?lat=\(self.latLocation)&lon=\(self.lonLocation)&key=\(autoData.autoKey)&features=breezometer_aqi,local_aqi,health_recommendations,sources_and_effects,pollutants_concentrations,pollutants_aqi_information") else {
+                return
+            }
+            print(url.absoluteString)
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let data = data else {
+                    return completion(nil)
+                }
+                
+                do {
+                    let json = String(data: data, encoding: String.Encoding.utf8)
+                    print("----------------------------------------------")
+                    print(json)
+                    guard let result = try? decoder.decode(AirQualityResponse.self, from: data) else {
+                        print ( "AirQualityResponse не декодируется")
+                        return
+                        
+                    }
+
+                    DispatchQueue.main.async {
+                        completion(result)
+                    }
+                } catch {
+                    completion(nil)
+                }
+            }.resume()
+    }
+    
 }
 
+//struct AirQuality: Codable {
+//    let date: Date?
+//    struct Date: Codable {
+//        let data_avaliable: Bool
+//        let indexes: Indexes?
+//        let pollutants: Pollutants?
+//        struct Indexes: Codable {
+//            let baqi: Baqi?
+//            struct Baqi: Codable {
+//                let aqi: Int?
+//                let aqiDisplay: String?
+//                let color: String?
+//                let category: String?
+//            }
+//        }
+//        struct Pollutants: Codable {
+//            
+//        
+//        }
+//
+//    }
+//    
+//}
