@@ -45,6 +45,7 @@
 		63BF9E202664C01E00FEF688 /* AirQualityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF9E1F2664C01E00FEF688 /* AirQualityModel.swift */; };
 		63C5AD1C26651E2500106C2B /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD1B26651E2500106C2B /* CustomCalloutView.swift */; };
 		63C5AD1E2666668C00106C2B /* AirQualityModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD1D2666668B00106C2B /* AirQualityModelView.swift */; };
+		63C5AD2026666BBD00106C2B /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD1F26666BBD00106C2B /* APIProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		63BF9E1F2664C01E00FEF688 /* AirQualityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModel.swift; sourceTree = "<group>"; };
 		63C5AD1B26651E2500106C2B /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		63C5AD1D2666668B00106C2B /* AirQualityModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModelView.swift; sourceTree = "<group>"; };
+		63C5AD1F26666BBD00106C2B /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		9090285B4704358C14253B08 /* Pods_BreezoMeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreezoMeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				63BF9E0E2662A32800FEF688 /* Cells */,
+				63C5AD1F26666BBD00106C2B /* APIProvider.swift */,
 				63C5AD1D2666668B00106C2B /* AirQualityModelView.swift */,
 				63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */,
 				63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */,
@@ -525,6 +528,7 @@
 				63BF9E112662A36F00FEF688 /* BrethQualityTableViewCell.swift in Sources */,
 				63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */,
 				63BF9E202664C01E00FEF688 /* AirQualityModel.swift in Sources */,
+				63C5AD2026666BBD00106C2B /* APIProvider.swift in Sources */,
 				63BF9DFE265D0FD000FEF688 /* AnalizeOfTypeViewController.swift in Sources */,
 				63C5AD1E2666668C00106C2B /* AirQualityModelView.swift in Sources */,
 				63BF9E1D2663FB2500FEF688 /* UIImageView.swift in Sources */,
