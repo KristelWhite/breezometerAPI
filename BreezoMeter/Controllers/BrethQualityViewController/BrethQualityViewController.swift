@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class BrethQualityViewController: UIViewController {
+class BrethQualityViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var seachBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,7 @@ class BrethQualityViewController: UIViewController {
     let concurrentScheduler = ConcurrentDispatchQueueScheduler(qos: .background)
     override func viewDidLoad() {
         super.viewDidLoad()
+        seachBar.delegate = self
         tableView.delegate = self
         tableView.rowHeight = 200
         tableView.register(UINib(nibName: "BrethQualityTableViewCell", bundle: nil),
@@ -83,6 +84,19 @@ class BrethQualityViewController: UIViewController {
             viewModel.place.onNext(text!)
         }
         ).disposed(by: disposeBag)
+        
+//        seachBar.rx.searchButtonClicked.map(<#T##transform: (()) throws -> Result##(()) throws -> Result#>)
+        // не работает!!!
+        seachBar.rx.cancelButtonClicked
+        .asDriver()
+        .drive(onNext: { [weak seachBar] in
+            seachBar?.searchTextField.text = "elfkbkb"
+            viewModel.place.onNext(seachBar?.text ?? "")
+            print("cansel button")
+            
+            
+        }).disposed(by: disposeBag)
+        
     }
 
 }

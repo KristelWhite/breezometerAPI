@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="769" y="119"/>
         </scene>
-        <!--Card View Controller-->
+        <!--View Controller-->
         <scene sceneID="pgK-Ec-d6A">
             <objects>
-                <viewController id="UR2-2n-YFY" customClass="CardViewController" customModule="BreezoMeter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UR2-2n-YFY" customClass="ViewController" customModule="BreezoMeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="27q-FU-azv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

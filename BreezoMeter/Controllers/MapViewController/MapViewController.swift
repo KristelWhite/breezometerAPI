@@ -8,15 +8,22 @@
 
 import UIKit
 import Mapbox
+import RxSwift
+import RxCocoa
 
 class MapViewController: UIViewController , MGLMapViewDelegate {
     var mapView: MGLMapView!
     var rasterLayer: MGLRasterStyleLayer?
 
     @IBOutlet weak var numAQILabel: UILabel!
-    
     @IBOutlet weak var updateMapButton: UIButton!
     @IBOutlet weak var aqiView: UIView!
+    
+    let geolocation: (latitude: CLLocationDegrees, longitude: CLLocationDegrees) = (45.876548, 45.876576)
+
+    var disposeBag = DisposeBag()
+    
+    let viewModel = MapViewModel(API: APIProvider())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +37,12 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
 //        }
         
         
+        
         mapView = MGLMapView(frame: view.bounds, styleURL: MGLStyle.darkStyleURL)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 45.5188, longitude: -122.6748), zoomLevel: 13, animated: false)
+        
+        mapView.setCenter(CLLocationCoordinate2D(latitude: geolocation.latitude, longitude: geolocation.longitude), zoomLevel: 13, animated: false)
          
         mapView.delegate = self
         mapView.tintColor = .darkGray
@@ -49,6 +58,18 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
         view.addSubview(aqiView)
         
         
+        updateMapButton.rx.tap.asObservable().subscribe({
+            event in self.viewModel.geolocation.onNext((self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude))
+            }).disposed(by: disposeBag)
+         
+       
+         
+        
+        viewModel.modelObservable.asObservable().subscribe(onNext: { model in
+            self.numAQILabel.text = model.data?.indexes?.baqi?.aqiDisplay
+            
+        }).disposed(by: disposeBag)
+        
     }
      
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
@@ -60,15 +81,14 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
 //        style.addLayer(rasterLayer)
         // Insert the raster layer below the map's symbol layers.
         for layer in style.layers.reversed() {
-            if !layer.isKind(of: MGLSymbolStyleLayer.self) {
+            if !layer.isKind(of: MGLSymbolStyleLayer.self), !layer.isKind(of: MGLLineStyleLayer.self) {
                 style.insertLayer(rasterLayer, above: layer)
                 break
             }
         }
-        
         self.rasterLayer = rasterLayer
-        
     }
+
     
     
     @IBAction func TouchUpInsideUpdateMap(_ sender: Any) {

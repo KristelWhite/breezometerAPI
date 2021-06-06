@@ -28,10 +28,11 @@ class ServiceProvider {
     // MARK: - Methods
     
     func loadPollen(completion: @escaping (PollenResponse?) -> Void) {
-        guard let url = URL(string:  "https://api.breezometer.com/pollen/v2/forecast/daily?lat=\(self.latLocation)&lon=\(self.lonLocation)&days=3&key=\(autoData.autoKey)") else {
+        guard let url = URL(string:  "https://api.breezometer.com/pollen/v2/forecast/daily?lat=\(self.latLocation)&lon=\(self.lonLocation)&days=3&key=\(autoData.autoKey)&features=types_information,plants_information") else {
+            print("wrong url")
             return
         }
-//        print(url.absoluteString)
+        print(url.absoluteString)
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -40,8 +41,8 @@ class ServiceProvider {
             }
             
             do {
-//                let json = String(data: data, encoding: String.Encoding.utf8)
-//                print(json)
+                let json = String(data: data, encoding: String.Encoding.utf8)
+                print(json)
                 let result = try decoder.decode(PollenResponse.self, from: data)
                 DispatchQueue.main.async {
 //                    print(result)
@@ -65,7 +66,7 @@ class ServiceProvider {
             guard let url = URL(string:  "https://api.breezometer.com/air-quality/v2/current-conditions?lat=\(self.latLocation)&lon=\(self.lonLocation)&key=\(autoData.autoKey)&features=breezometer_aqi,local_aqi,health_recommendations,sources_and_effects,pollutants_concentrations,pollutants_aqi_information") else {
                 return
             }
-            print(url.absoluteString)
+//            print(url.absoluteString)
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase

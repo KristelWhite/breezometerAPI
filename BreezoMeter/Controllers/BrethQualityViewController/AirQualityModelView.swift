@@ -33,10 +33,12 @@ class AirQualityModelView {
                 model in
                 self.modelObservable.onNext([model])
             }).disposed(by: self.disposeBag)
-            
-            
             }).disposed(by: disposeBag)
-                
+        
+        place.subscribe(onNext: {
+            text in
+            print(text)
+            }).disposed(by: disposeBag)
                 
             
         

@@ -18,13 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabCoordinator: TabCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+       
         let appNavigationController = UINavigationController()
+        
         tabCoordinator = TabCoordinator(navigationController: appNavigationController)
         self.window?.rootViewController = tabCoordinator.navigationViewController
+//        appNavigationController.pushViewController(ViewController(), animated: false)
+//        self.window?.rootViewController = appNavigationController
         self.window?.makeKeyAndVisible()
         
-//        locationService.requestPermission()
-//        locationService.start()
+        locationService.requestPermission()
+        locationService.start()
 
         // Override point for customization after application launch.
         return true

@@ -8,12 +8,15 @@
 
 import Foundation
 import CoreLocation
-
+import RxSwift
 
 
 final class LocationService: NSObject, CLLocationManagerDelegate  {
     private let locationManager = CLLocationManager()
     let service = ServiceProvider()
+    
+    var currentGeolocation = BehaviorSubject<(lattitude: CLLocationDegrees, longitude: CLLocationDegrees)>(value: (45.756765,47.785788))
+    
     
     override init() {
         super.init()
@@ -26,45 +29,49 @@ final class LocationService: NSObject, CLLocationManagerDelegate  {
         locationManager.allowsBackgroundLocationUpdates = true
         //запрещаем уходить в паузы при не изменении локации
         locationManager.pausesLocationUpdatesAutomatically = false
+        
     }
     //алерт о запросе прав
     func requestPermission() {
         locationManager.requestAlwaysAuthorization()
 
     }
-    
-    func start() {
-//        setActiveMode(true)
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 100
-        locationManager.startUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
-//        print(locationManager.location?.coordinate ?? "нет")
-        
-//        motionManager.startActivityUpdates(to: .main, withHandler: { [weak self] activity in
-//            self?.setActiveMode(activity?.cycling ?? false)
-//        })
-    }
-    
-    private func setActiveMode(_ value: Bool) {
+    private func setActive(_ value: Bool) {
         if value {
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager.distanceFilter = 100
         } else {
-            locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-            locationManager.distanceFilter = CLLocationDistanceMax
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.distanceFilter = 3000
         }
     }
     
+    func start() {
+        setActive(true)
+        locationManager.startUpdatingLocation()
+        //перезапуск приложения в выгруженом состоянии для доставки новых данных
+        locationManager.startMonitoringSignificantLocationChanges()
+        
+        service.loadPollen{ [weak self] (result) in
+        guard let result = result, let _ = self else {
+            return
+        }
+    }
+    
+}
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+//        currentGeolocation.onNext(((locations.last?.coordinate.latitude)!, (locations.last?.coordinate.longitude)!))
         
-//        print(locationManager.location?.coordinate ?? "нет")
+        print(self.locationManager.location?.coordinate ?? "нет")
         
-        if let coordinates = locationManager.location?.coordinate {
+        if let coordinates = self.locationManager.location?.coordinate {
             service.setLocation(lat: coordinates.latitude, lon: coordinates.longitude)
             }
-//        print(service.latLocation, service.lonLocation)
+        print("update location")
+        print(service.latLocation, service.lonLocation)
         service.loadPollen{ [weak self] (result) in
             guard let result = result, let _ = self else {
                 return
