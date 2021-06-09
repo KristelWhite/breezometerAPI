@@ -20,17 +20,18 @@ class APIProvider {
             guard let url = URL(string:    "https://api.breezometer.com/air-quality/v2/current-conditions?lat=\(latitude)&lon=\(longitude)&key=\(UrlParts.autoKey)&features=breezometer_aqi,local_aqi,health_recommendations,sources_and_effects,pollutants_concentrations,pollutants_aqi_information") else {
                     observer.onError(NetworkError.noDataProvided)
                     return Disposables.create()
-                
                 }
                 print(url.absoluteString)
+
                 URLSession.shared.dataTask(with: url) { (data, response, error) in
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     guard let data = data else {
-                        observer.onError(NetworkError.invalidHttpBodyData)
+                    observer.onError(NetworkError.invalidHttpBodyData)
+                        print("no data")
                         return
                     }
-                    
+                    print("is data")
                     do {
                         let json = String(data: data, encoding: String.Encoding.utf8)
                         print("----------------------------------------------")
@@ -45,9 +46,14 @@ class APIProvider {
                         observer.onNext(result)
                         observer.onCompleted()
                     }
-                }
+            }.resume()
             return Disposables.create()
             }
         
         }
+    
+    
+    
+    
+
 }

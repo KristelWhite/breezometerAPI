@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window?.rootViewController = appNavigationController
         self.window?.makeKeyAndVisible()
         
-        locationService.requestPermission()
+//        locationService.requestPermission()
 //        locationService.start()
 
         // Override point for customization after application launch.

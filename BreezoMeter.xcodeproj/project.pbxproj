@@ -267,8 +267,8 @@
 		63BF9DF5265C3EC300FEF688 /* MapViewController */ = {
 			isa = PBXGroup;
 			children = (
-				63BF9E0A26618F5500FEF688 /* MapViewController.swift */,
 				63BF9E0B26618F5500FEF688 /* MapViewController.xib */,
+				63BF9E0A26618F5500FEF688 /* MapViewController.swift */,
 				63C5AD212668D1BB00106C2B /* MapViewModel.swift */,
 			);
 			path = MapViewController;

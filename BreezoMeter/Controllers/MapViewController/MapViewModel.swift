@@ -12,27 +12,46 @@ import RxCocoa
 import CoreLocation
 
 class MapViewModel {
-    let geolocation: BehaviorSubject<(Double, Double)> = BehaviorSubject<(Double, Double)>(value: (45.879896,45.879876))
+    let geolocation: BehaviorSubject<(latitude: CLLocationDegrees, longitude: CLLocationDegrees)> = BehaviorSubject<(latitude: CLLocationDegrees, longitude: CLLocationDegrees)> (value: (45.879896,45.879876))
     
     var model: AirQualityResponse?
     
-    var modelObservable: PublishSubject<AirQualityResponse> = PublishSubject<AirQualityResponse>()
+    var modelObservable: BehaviorSubject<AirQualityResponse> = BehaviorSubject<AirQualityResponse>(value: AirQualityResponse.init(metadata: nil, data: nil, error: nil))
     
     var disposeBag = DisposeBag()
     
-    let maxAqi = "/100"
-    
-    var aqi : BehaviorSubject<String> = BehaviorSubject<String>(value: "58/100")
+  
+
  
     init(API: APIProvider) {
+//        APIProvider().loadAirQuality(latitude: 45.879896, longitude: 45.879876).subscribe(onNext: {model in print(model)}, onError: {error in print(error)}, onCompleted: {print("complrted")}, onDisposed: {print("disposed")})
        
-      
-        geolocation.subscribe(onNext: { 
+        geolocation.subscribe(onNext: {
             lat, long in
-            API.loadAirQuality(latitude: lat, longitude: long).subscribe(onNext: {
-                model in
-                self.modelObservable.onNext(model)
-            }).disposed(by: self.disposeBag)
+            API.loadAirQuality(latitude: lat, longitude: long).catch{error in
+                print(error)
+                return Observable.just(AirQualityResponse.init(metadata: nil, data: nil, error: nil))
+
+            }.do(onNext: {model in
+                print(model)
+            },  onError: {model in
+                print(model)
+            },  onCompleted: {
+                print("completed")
+            }, onDispose: {print("dispose")})
+                .bind(onNext: {
+                    model in
+                    self.modelObservable
+                    .onNext(model)
+                }).disposed(by: self.disposeBag)
         }).disposed(by: disposeBag)
+        
+//        geolocation.flatMap({coordinates in
+//            APIProvider().loadAirQuality(latitude: coordinates.latitude, longitude: coordinates.longitude)
+//        }).bind(onNext: {model in
+//            self.modelObservable
+//                .onNext(model)
+//        }).disposed(by: disposeBag)
+        
     }
 }

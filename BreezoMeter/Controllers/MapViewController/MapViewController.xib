@@ -41,9 +41,6 @@
                             <rect key="frame" x="334" y="8" width="35" height="35"/>
                             <accessibility key="accessibilityConfiguration" label="UpdateCoordinates"/>
                             <state key="normal" title="Button" image="locationupdate50"/>
-                            <connections>
-                                <action selector="TouchUpInsideUpdateMap:" destination="-1" eventType="touchUpInside" id="flj-ve-Zno"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
