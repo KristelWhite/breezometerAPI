@@ -32,7 +32,7 @@ class ServiceProvider {
             print("wrong url")
             return
         }
-        print(url.absoluteString)
+//        print(url.absoluteString)
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -42,6 +42,7 @@ class ServiceProvider {
             
             do {
                 let json = String(data: data, encoding: String.Encoding.utf8)
+                print("____________pollen_______________")
                 print(json)
                 let result = try decoder.decode(PollenResponse.self, from: data)
                 DispatchQueue.main.async {
@@ -76,7 +77,7 @@ class ServiceProvider {
                 
                 do {
                     let json = String(data: data, encoding: String.Encoding.utf8)
-                    print("----------------------------------------------")
+                    print("-----------------quality---------------------")
                     print(json)
                     guard let result = try? decoder.decode(AirQualityResponse.self, from: data) else {
                         print ( "AirQualityResponse не декодируется")

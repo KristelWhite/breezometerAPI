@@ -24,13 +24,13 @@ var controllers: [UIViewController] = []
     navigationViewController = navigationController
     
     let brethQualityViewController = BrethQualityViewController()
-    brethQualityViewController.tabBarItem = UITabBarItem(title: "Качество воздуха", image: UIImage(imageLiteralResourceName: "weather30"), selectedImage: UIImage(imageLiteralResourceName: "weather30"))
+    brethQualityViewController.tabBarItem = UITabBarItem(title: "Air quality", image: UIImage(imageLiteralResourceName: "weather30"), selectedImage: UIImage(imageLiteralResourceName: "weather30"))
 
     let pollenViewController = PollenViewController()
-    pollenViewController.tabBarItem = UITabBarItem(title: "Пыльца", image: UIImage(imageLiteralResourceName: "pollen30"), selectedImage: UIImage(imageLiteralResourceName: "pollen30"))
+    pollenViewController.tabBarItem = UITabBarItem(title: "Pollen", image: UIImage(imageLiteralResourceName: "pollen30"), selectedImage: UIImage(imageLiteralResourceName: "pollen30"))
 
     let mapViewController = MapViewController() 
-    mapViewController.tabBarItem = UITabBarItem(title: "Карта", image: UIImage(imageLiteralResourceName: "map24") , selectedImage: UIImage(systemName: "map24"))
+    mapViewController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(imageLiteralResourceName: "map24") , selectedImage: UIImage(systemName: "map24"))
 
     super.init()
 
@@ -43,5 +43,6 @@ var controllers: [UIViewController] = []
     tabController.delegate = self
         
         navigationViewController.pushViewController(tabController, animated: true)
+//        navigationController.pushViewController(AnalizeOfTypeViewController(), animated: false)
 }
 }

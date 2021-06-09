@@ -19,7 +19,7 @@ class AnalizeOfTypeViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "ForecastTableViewCell", bundle: nil),
         forCellReuseIdentifier: "forecastCell")
-        tableView.rowHeight = 200
+        
     }
 
 
@@ -42,13 +42,18 @@ extension AnalizeOfTypeViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
+            tableView.rowHeight = 50
             let cell = UITableViewCell()
-            cell.textLabel?.text = "Forecast"
-            cell.textLabel?.textColor = .green
+            cell.textLabel?.text = "Forecast Pine"
+            cell.textLabel?.textColor = .black
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+            
             return cell
         }
         else if indexPath.row == 1 {
-            return UITableViewCell()
+            tableView.rowHeight = 200
+             let cell = tableView.dequeueReusableCell(withIdentifier: "forecastCell", for: indexPath) as! ForecastTableViewCell
+                        return cell
         }
         return UITableViewCell()
         

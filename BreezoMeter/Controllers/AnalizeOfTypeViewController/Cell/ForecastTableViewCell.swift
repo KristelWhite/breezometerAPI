@@ -38,12 +38,24 @@ extension ForecastTableViewCell: UICollectionViewDataSource, UICollectionViewDel
                
                if indexPath.row == 0 {
                    cell.weekday.text = "Today"
+                   cell.weekday.textColor = .systemBlue
+                   cell.numLevel.text = "2/5"
+                   cell.textLevel.text = "Low"
+                   cell.numLevel.textColor = .systemGreen
                }
                else if indexPath.row == 1 {
                    cell.weekday.text = "Tomorrow"
+                   cell.numLevel.text = "2/5"
+                   cell.textLevel.text = "Low"
+                   cell.numLevel.textColor = .systemGreen
+                   cell.weekday.textColor = .systemBlue
                }
                else if indexPath.row == 2 {
                    cell.weekday.text = "After tomorrow"
+                   cell.numLevel.text = "2/5"
+                   cell.numLevel.textColor = .systemGreen
+                   cell.textLevel.text = "Low"
+                   cell.weekday.textColor = .systemBlue
                }
                return cell
     }

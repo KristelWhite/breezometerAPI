@@ -32,7 +32,7 @@ class BrethQualityTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        title.text = "Индекс качества воздуха"
+        title.text = "INDEX AQI"
         intQuality.text = "16"
         stringQuatity.text = "fine"
         
@@ -43,6 +43,29 @@ class BrethQualityTableViewCell: UITableViewCell {
         coLabel.text = "CO"
         so2Label.attributedText = exponentiation(string: "SO2", location: 2, length: 1)
         o3Label.attributedText = exponentiation(string: "O3", location: 1, length: 1)
+        
+//        interface
+        intQuality.text = "58"
+        intQuality.textColor = .systemGreen
+        stringQuatity.text = "Moderate air quality"
+        
+        pm10.text =  "80"
+        pm10.textColor = .systemGreen
+        
+        pm25.text = "76"
+        pm25.textColor = .systemGreen
+        
+        o3.text = "58"
+        o3.textColor = .systemYellow
+        
+        no2.text = "84"
+        no2.textColor = .systemGreen
+        
+        so2.text = "100"
+        so2.textColor = .systemGreen
+        
+        co.text = "99"
+        co.textColor = .systemGreen
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

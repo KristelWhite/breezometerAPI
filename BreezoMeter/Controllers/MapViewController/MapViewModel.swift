@@ -16,18 +16,18 @@ class MapViewModel {
     
     var model: AirQualityResponse?
     
-    var modelObservable = PublishSubject<AirQualityResponse>()
+    var modelObservable: PublishSubject<AirQualityResponse> = PublishSubject<AirQualityResponse>()
     
     var disposeBag = DisposeBag()
     
     let maxAqi = "/100"
     
-    var aqi : BehaviorSubject<String> = BehaviorSubject<String>(value: "65/100")
+    var aqi : BehaviorSubject<String> = BehaviorSubject<String>(value: "58/100")
  
     init(API: APIProvider) {
-
+       
       
-        geolocation.subscribe(onNext: {
+        geolocation.subscribe(onNext: { 
             lat, long in
             API.loadAirQuality(latitude: lat, longitude: long).subscribe(onNext: {
                 model in

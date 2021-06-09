@@ -46,6 +46,7 @@
 		63C5AD1E2666668C00106C2B /* AirQualityModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD1D2666668B00106C2B /* AirQualityModelView.swift */; };
 		63C5AD2026666BBD00106C2B /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD1F26666BBD00106C2B /* APIProvider.swift */; };
 		63C5AD222668D1BB00106C2B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD212668D1BB00106C2B /* MapViewModel.swift */; };
+		63C5AD242671035D00106C2B /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5AD232671035C00106C2B /* GeolocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		63C5AD1D2666668B00106C2B /* AirQualityModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityModelView.swift; sourceTree = "<group>"; };
 		63C5AD1F26666BBD00106C2B /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		63C5AD212668D1BB00106C2B /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		63C5AD232671035C00106C2B /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
 		9090285B4704358C14253B08 /* Pods_BreezoMeter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreezoMeter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,7 +196,9 @@
 		63BF9DD12654362C00FEF688 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				63C5AD1F26666BBD00106C2B /* APIProvider.swift */,
 				63BF9DC22642D55E00FEF688 /* ServiceProvider.swift */,
+				63C5AD232671035C00106C2B /* GeolocationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -253,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				63BF9E0E2662A32800FEF688 /* Cells */,
-				63C5AD1F26666BBD00106C2B /* APIProvider.swift */,
 				63C5AD1D2666668B00106C2B /* AirQualityModelView.swift */,
 				63BF9DE326546D9300FEF688 /* BrethQualityViewController.swift */,
 				63BF9DE426546D9300FEF688 /* BrethQualityViewController.xib */,
@@ -525,6 +528,7 @@
 				63BF9DA22642D49100FEF688 /* ViewController.swift in Sources */,
 				63BF9DE126546D7000FEF688 /* PollenViewController.swift in Sources */,
 				63BF9E112662A36F00FEF688 /* BrethQualityTableViewCell.swift in Sources */,
+				63C5AD242671035D00106C2B /* GeolocationService.swift in Sources */,
 				63BF9DFA265C405400FEF688 /* ListOfPollenTypesTableViewCell.swift in Sources */,
 				63BF9E202664C01E00FEF688 /* AirQualityModel.swift in Sources */,
 				63C5AD2026666BBD00106C2B /* APIProvider.swift in Sources */,

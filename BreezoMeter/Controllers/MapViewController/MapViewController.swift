@@ -19,8 +19,8 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
     @IBOutlet weak var updateMapButton: UIButton!
     @IBOutlet weak var aqiView: UIView!
     
-    let geolocation: (latitude: CLLocationDegrees, longitude: CLLocationDegrees) = (45.876548, 45.876576)
-
+    let geolocation: (latitude: CLLocationDegrees, longitude: CLLocationDegrees) =  (52.52437 , 13.41053)
+//(48.857456,  2.354611)
     var disposeBag = DisposeBag()
     
     let viewModel = MapViewModel(API: APIProvider())
@@ -38,11 +38,11 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
         
         
         
-        mapView = MGLMapView(frame: view.bounds, styleURL: MGLStyle.darkStyleURL)
+        mapView = MGLMapView(frame: view.bounds, styleURL: MGLStyle.streetsStyleURL)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          
         
-        mapView.setCenter(CLLocationCoordinate2D(latitude: geolocation.latitude, longitude: geolocation.longitude), zoomLevel: 13, animated: false)
+        mapView.setCenter(CLLocationCoordinate2D(latitude: geolocation.latitude, longitude: geolocation.longitude), zoomLevel: 6.5, animated: false)
          
         mapView.delegate = self
         mapView.tintColor = .darkGray
@@ -56,7 +56,7 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
         view.addSubview(markerImageView)
         
         view.addSubview(aqiView)
-        
+       
         
         updateMapButton.rx.tap.asObservable().subscribe({
             event in self.viewModel.geolocation.onNext((self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude))
@@ -74,9 +74,9 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
      
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         // Add a new raster source and layer.
-        let source = MGLRasterTileSource(identifier: "breezometer-tiles", tileURLTemplates: ["https://tiles.breezometer.com/v1/air-quality/breezometer-aqi/current-conditions/{z}/{x}/{y}.png?key=\(UrlParts.autoKey)&breezometer_aqi_color=red_green"], options: [ .tileSize: 256 ])
+        let source = MGLRasterTileSource(identifier: "breezometer-tiles", tileURLTemplates: ["https://tiles.breezometer.com/v1/air-quality/breezometer-aqi/current-conditions/{z}/{x}/{y}.png?key=\(UrlParts.autoKey)&breezometer_aqi_color=indiper"], options: [ .tileSize: 256 ])
         let rasterLayer = MGLRasterStyleLayer(identifier: "breezometer-tiles", source: source)
-        rasterLayer.rasterOpacity = NSExpression(forConstantValue: 0.65 as NSNumber)
+        rasterLayer.rasterOpacity = NSExpression(forConstantValue: 0.7 as NSNumber)
         style.addSource(source)
 //        style.addLayer(rasterLayer)
         // Insert the raster layer below the map's symbol layers.
@@ -93,7 +93,7 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
     
     @IBAction func TouchUpInsideUpdateMap(_ sender: Any) {
         print("touch updateMap")
-        numAQILabel.text = "50/100"
+        numAQILabel.text = "58/100"
     }
     
 

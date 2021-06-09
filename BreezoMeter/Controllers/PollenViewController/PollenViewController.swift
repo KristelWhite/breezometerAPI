@@ -22,6 +22,7 @@ class PollenViewController: UIViewController {
         forCellReuseIdentifier: "daysViewCell")
         tableView.register(UINib(nibName: "ListOfPollenTypesTableViewCell", bundle: nil),
            forCellReuseIdentifier: "typesViewCell")
+        seachBar.text = ("Berlin, Germani")
                           
         
         
@@ -48,7 +49,7 @@ extension PollenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            tableView.rowHeight = 200
+            tableView.rowHeight = 230
             let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! PollenDaysTableViewCell
             return cell
         }

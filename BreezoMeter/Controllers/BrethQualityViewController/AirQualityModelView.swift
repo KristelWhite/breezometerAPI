@@ -14,7 +14,7 @@ import CoreLocation
 class AirQualityModelView {
     
 //    let geolocation: BehaviorSubject<(CLLocationDegrees, CLLocationDegrees)> = BehaviorSubject<(CLLocationDegrees, CLLocationDegrees)>(value: (CLLocationDegrees(45.879876),CLLocationDegrees(45.879876)))
-    let geolocation: BehaviorSubject<(Double, Double)> = BehaviorSubject<(Double, Double)>(value: (45.879896,45.879876)) 
+    let geolocation: PublishSubject<(Double, Double)> = PublishSubject<(Double, Double)>()
     
     var model: AirQualityResponse?
     
