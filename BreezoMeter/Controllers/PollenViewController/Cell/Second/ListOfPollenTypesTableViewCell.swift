@@ -13,14 +13,13 @@ class ListOfPollenTypesTableViewCell: UITableViewCell {
     @IBOutlet weak var analizeOfTypesLable: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var viewModel: PollenViewModel? = nil 
     override func awakeFromNib() {
         super.awakeFromNib()
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.register(UINib(nibName: "ListOfPollenTypesTableViewCell", bundle: nil),
-//        forCellReuseIdentifier: "typesViewCell")
-                          
-//        tableView.rowHeight = 250
+
         analizeOfTypesLable.text = "Analize of types"
         analizeOfTypesLable.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         analizeOfTypesLable.textColor = UIColor.gray
@@ -39,7 +38,6 @@ extension ListOfPollenTypesTableViewCell: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "daysViewCell", for: indexPath) as! ListOfPollenTypesTableViewCell
         let cell = UITableViewCell()
         if indexPath.row == 0 {
             cell.textLabel?.text = "Pine"

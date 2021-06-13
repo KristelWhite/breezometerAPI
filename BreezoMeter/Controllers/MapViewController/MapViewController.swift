@@ -38,16 +38,16 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
 //        }
         configurateMap()
         
-        self.viewModel.modelObservable.subscribe(onNext: {
-            model in
-            print(model.data?.indexes?.baqi?.aqiDisplay ?? "not model")
-        }
-        ).disposed(by: disposeBag)
+//        self.viewModel.modelObservable.subscribe(onNext: {
+//            model in
+//            print(model.data?.indexes?.baqi?.aqiDisplay ?? "not model")
+//        }
+//        ).disposed(by: disposeBag)
         
         //при нажатие кнопки "обновить" координаты центра обновляеют геолокацию в логике
         updateMapButton.rx.tap.subscribe({
             event in self.viewModel.geolocation.onNext((self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude))
-            print("tab on updateButton")
+//            print("tab on updateButton")
             }).disposed(by: disposeBag)
          //если обновилась модель, выводится значение на экран
         self.viewModel.modelObservable.asObservable()
@@ -59,9 +59,10 @@ class MapViewController: UIViewController , MGLMapViewDelegate {
          mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
          // про обновлении координат значение центра карты обновляется
-        self.viewModel.geolocation.asObservable().do(onNext: {
-            lat, long in
-            print(lat, long)})
+        self.viewModel.geolocation.asObservable()
+//            .do(onNext: {
+//            lat, long in
+//            print(lat, long)})
             .subscribe(onNext: {
                 coordinates in
             self.mapView.setCenter(CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude), zoomLevel: 6.5, animated: false)

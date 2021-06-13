@@ -50,8 +50,9 @@ import Foundation
 struct PollenResponse: Codable {
     let metadata: JSONNull?
     let data: [Datum]?
-    let error: JSONNull?
+    let error: DataError?
 }
+
 
 // MARK: - Datum
 struct Datum: Codable {

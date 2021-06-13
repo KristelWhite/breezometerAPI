@@ -12,8 +12,6 @@ import RxSwift
 
 class APIProvider {
     let dayNumber = 3
-    var latLocation: CLLocationDegrees = 48.857456
-    var lonLocation: CLLocationDegrees = 2.354611
     
     func loadAirQuality(latitude: CLLocationDegrees, longitude: CLLocationDegrees)-> Observable<AirQualityResponse> {
         return Observable<AirQualityResponse>.create { observer in
@@ -52,7 +50,42 @@ class APIProvider {
         
         }
     
+    func loadPollen(latitude: CLLocationDegrees, longitude: CLLocationDegrees)-> Observable<PollenResponse> {
+    return Observable<PollenResponse>.create { observer in
+        guard let url = URL(string:    "https://api.breezometer.com/pollen/v2/forecast/daily?lat=\(latitude)&lon=\(longitude)&days=3&key=\(UrlParts.autoKey)&features=types_information,plants_information") else {
+                observer.onError(NetworkError.noDataProvided)
+                return Disposables.create()
+            }
+            print(url.absoluteString)
+
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                guard let data = data else {
+                observer.onError(NetworkError.invalidHttpBodyData)
+                    print("no data")
+                    return
+                }
+                print("is data")
+                do {
+                    let json = String(data: data, encoding: String.Encoding.utf8)
+                    print("----------------------------------------------")
+                    print(json)
+                    guard let result = try? decoder.decode(PollenResponse.self, from: data) else {
+                        print ( "PollenResponse не декодируется")
+                        observer.onError(NetworkError.failedToDecode)
+                        return
+                        
+                    }
+                    
+                    observer.onNext(result)
+                    observer.onCompleted()
+                }
+        }.resume()
+        return Disposables.create()
+        }
     
+    }
     
     
 

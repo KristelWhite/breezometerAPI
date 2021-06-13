@@ -13,7 +13,11 @@ import Foundation
 struct AirQualityResponse: Codable {
     let metadata: Bool?
     let data: DataClass?
-    let error: Bool?
+    let error: DataError?
+}
+// MARK: - Error
+struct DataError: Codable {
+    let code, title, detail: String
 }
 
 // MARK: - DataClass

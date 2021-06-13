@@ -11,13 +11,13 @@ import RxSwift
 import RxCocoa
 import CoreLocation
 
-class AirQualityModelView {
+class AirQualityViewModel {
     
-//    let geolocation: BehaviorSubject<(CLLocationDegrees, CLLocationDegrees)> = BehaviorSubject<(CLLocationDegrees, CLLocationDegrees)>(value: (CLLocationDegrees(45.879876),CLLocationDegrees(45.879876)))
-    let geolocation: PublishSubject<(Double, Double)> = PublishSubject<(Double, Double)>()
+    let geolocation: BehaviorSubject<(latitude: CLLocationDegrees, longitude: CLLocationDegrees)> = BehaviorSubject<(latitude: CLLocationDegrees, longitude: CLLocationDegrees)>(value: (CLLocationDegrees(52.5177795),CLLocationDegrees( 13.4098392)))
+
     
-    var model: AirQualityResponse?
-    
+//    var model: AirQualityResponse?
+
     var modelObservable: BehaviorSubject<[AirQualityResponse]> = BehaviorSubject<[AirQualityResponse]>(value: [AirQualityResponse]())
     
     var disposeBag = DisposeBag()
@@ -34,12 +34,24 @@ class AirQualityModelView {
                 self.modelObservable.onNext([model])
             }).disposed(by: self.disposeBag)
             }).disposed(by: disposeBag)
-        
+//        вывод значения place
         place.subscribe(onNext: {
             text in
             print(text)
             }).disposed(by: disposeBag)
-                
+//находим координаты выбранного места
+        place.filter{$0 != ""}.distinctUntilChanged{ $0 == $1 }.bind(onNext: {text in
+            GeolocationService().coordinates(forAddress: text) {
+                (location) in
+                guard let location = location else {
+                    // Handle error here.
+                    print("adress error")
+//                    вызвать уведомление
+                    return
+                    }
+            self.geolocation.onNext((location.latitude,location.longitude))
+            }
+            }).disposed(by: disposeBag)
             
         
 //        modelObservable.subscribe(onNext:{ modelArr in

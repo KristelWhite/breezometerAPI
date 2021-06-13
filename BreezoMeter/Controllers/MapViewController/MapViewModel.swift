@@ -33,9 +33,9 @@ class MapViewModel {
                 return Observable.just(AirQualityResponse.init(metadata: nil, data: nil, error: nil))
 
             }.do(onNext: {model in
-                print(model)
-            },  onError: {model in
-                print(model)
+                print("on next model")
+            },  onError: {error in
+                print("on error error")
             },  onCompleted: {
                 print("completed")
             }, onDispose: {print("dispose")})

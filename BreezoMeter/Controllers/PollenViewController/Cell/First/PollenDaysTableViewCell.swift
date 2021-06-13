@@ -7,21 +7,103 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PollenDaysTableViewCell: UITableViewCell{
 
+    let maxLevel = "/5"
+    
+    enum State: String {
+          case tree = "Tree"
+          case weed = "Weed"
+          case grass = "Grass"
+      }
+    let state : BehaviorSubject<State> = BehaviorSubject<State>(value: State.tree)
+    
+    
     @IBOutlet weak var grassButton: UIButton!
     @IBOutlet weak var weedButton: UIButton!
     @IBOutlet weak var treeButton: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var viewModel: PollenViewModel?
+   
+    let disposeBag = DisposeBag()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.delegate = self
-        collectionView.dataSource = self
         collectionView.register(UINib(nibName: "TodayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "todayViewCell")
+         configurateButtons()
         
+//при нажатии на кнопки меняется состояние данных state
+        grassButton.rx.tap.subscribe(onNext: {
+            event in
+        self.state.onNext(State.grass)
+            }).disposed(by: disposeBag)
+        
+        treeButton.rx.tap.subscribe(onNext: {
+            event in
+            self.state.onNext(State.tree)
+        }).disposed(by: disposeBag)
+        
+        weedButton.rx.tap.subscribe(onNext: {
+            event in
+            self.state.onNext(State.weed)
+        }).disposed(by: disposeBag)
+            
+        
+        //при изменении state
+        self.state.do(onNext: {state in
+            print(state)
+        }).filter({_ in
+            self.viewModel != nil
+        }).distinctUntilChanged().flatMap{ state -> Observable<[PollenViewModel.Forecast]> in
+            
+            if state  == State.tree {
+                return Observable.just((self.viewModel?.pollenForecast?.tree)!)
+            }
+            else if state  == State.grass {
+                return Observable.just((self.viewModel?.pollenForecast?.grass)!)
+            }
+            else  {
+                return Observable.just((self.viewModel?.pollenForecast?.weed)!)
+            }
+            
+        }.bind(to: self.collectionView!.rx.items){
+                (collectionView, row, element) in
+                let indexPath = IndexPath(item: row, section: 0)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayViewCell", for: indexPath)  as! TodayCollectionViewCell
+                if row == 0 {
+                    cell.weekday.text = "Today"
+                    cell.weekday.textColor = .systemBlue
+                }
+                else if row == 1 {
+                    cell.weekday.text = "Tomorrow"
+                    cell.weekday.textColor = .systemBlue
+                }
+                else if row == 2 {
+                    cell.weekday.text = "After tomorrow"
+                    cell.weekday.textColor = .systemBlue
+                }
+            if element.intAqi == nil {
+                cell.numLevel.text = "no data"
+            }
+            else {
+                 cell.numLevel.text = String(element.intAqi!) + self.maxLevel
+            }
+                cell.textLevel.text = element.stringAqi ?? "no data"
+            cell.numLevel.textColor = UIColor(hexString: element.color ?? "#000000")
+
+                return cell
+            }.disposed(by: self.disposeBag)
+            
+        
+    
+    }
+    func configurateButtons(){
         grassButton.setTitle("Grass", for: .normal)
         grassButton.setImage(UIImage(named: "grass24")!, for: .normal)
         grassButton.imageView?.contentMode = .scaleAspectFit
@@ -48,37 +130,12 @@ class PollenDaysTableViewCell: UITableViewCell{
     
 }
 
-extension PollenDaysTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource  {
+extension PollenDaysTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         3
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayViewCell", for: indexPath) as! TodayCollectionViewCell
-        
-        if indexPath.row == 0 {
-            cell.weekday.text = "Today"
-            cell.weekday.textColor = .systemBlue
-            cell.numLevel.text = "2/5"
-            cell.textLevel.text = "Low"
-            cell.numLevel.textColor = .systemGreen
-        }
-        else if indexPath.row == 1 {
-            cell.weekday.text = "Tomorrow"
-            cell.numLevel.text = "2/5"
-            cell.textLevel.text = "Low"
-            cell.numLevel.textColor = .systemGreen
-            cell.weekday.textColor = .systemBlue
-        }
-        else if indexPath.row == 2 {
-            cell.weekday.text = "After tomorrow"
-            cell.numLevel.text = "2/5"
-            cell.numLevel.textColor = .systemGreen
-            cell.textLevel.text = "Low"
-            cell.weekday.textColor = .systemBlue
-        }
-        return cell
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let cell = collectionView.cellForItem(at: indexPath) as? TodayCollectionViewCell
